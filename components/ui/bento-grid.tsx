@@ -2,6 +2,7 @@ import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
 import { GlobeDemo } from "./GlobeDemo";
 import { div } from "motion/react-client";
+import LetterGlitch from "./letter-glitch";
 
 export const BentoGrid = ({
   className,
@@ -51,7 +52,7 @@ export const BentoGridItem = ({
       )}
     >
       {/* add img divs */}
-      <div className={`${id === 6 && " justify-center"} h-full`}>
+      <div className={`${id === 6 && " flex justify-center"} h-full`}>
         <div className="w-full h-full absolute">
           {img && (
             <img
@@ -77,9 +78,14 @@ export const BentoGridItem = ({
         </div>
         {id === 6 && (
           // add background animation , remove the p tag
-          <BackgroundGradientAnimation>
-            <div className="absolute z-50 inset-0 flex items-center justify-center text-white font-bold px-4 pointer-events-none text-3xl text-center md:text-4xl lg:text-7xl"></div>
-          </BackgroundGradientAnimation>
+          <LetterGlitch
+            glitchSpeed={100}
+            centerVignette={true}
+            outerVignette={true}
+            smooth={true}
+            glitchColors={["#2b4539", "#61dca3", "#61b3dc"]} // pick colors
+            characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+          />
         )}
 
         <div

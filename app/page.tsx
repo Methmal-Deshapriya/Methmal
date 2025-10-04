@@ -7,6 +7,7 @@ import { FloatingNav } from "@/components/ui/floating-nav";
 import { IoHomeOutline } from "react-icons/io5";
 import Hero2 from "@/components/Hero-2";
 import { GlobeDemo } from "@/components/ui/GlobeDemo";
+import RecentProjects from "@/components/RecentProjects";
 export default function Home() {
   return (
     <main className="relative bg-black-100 text-white flex justify-center items-center flex-col  overflow-hidden sm:px-10 lg:pt-[45px] px:5 pt-[20px] pb-[20px]">
@@ -18,9 +19,10 @@ export default function Home() {
       </div>
 
       <Hero2 />
-      <div className="mb-20"></div>
-      <div className="w-[80vw]">
+
+      <div className=" w-[80vw]">
         <Grid />
+        <RecentProjects />
       </div>
     </main>
   );
