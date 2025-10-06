@@ -216,3 +216,21 @@ export const socialMedia = [
     img: "/link.svg",
   },
 ];
+
+export const dummyContent = [
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    description: "",
+    badge: "React",
+  },
+  {
+    title: "Lorem Ipsum Dolor Sit Amet",
+    description: "",
+    badge: "Changelog",
+  },
+  {
+    title: "",
+    description: "Lorem",
+    badge: "Launch Week",
+  },
+];
