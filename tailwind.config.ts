@@ -147,7 +147,8 @@ const config = {
           "scroll var(--animation-duration, 40s) var(--animation-direction, forwards) linear infinite",
       },
       fontFamily: {
-        sans: ["var(--font-geist-sans)", "sans-serif"], // default body
+        sans: ["var(--font-inter)", "sans-serif"],
+        // default body
         mono: ["var(--font-geist-mono)", "monospace"], // code blocks
         funnel: ["var(--font-funnel-sans)", "sans-serif"], // 🔥 for headings
       },
