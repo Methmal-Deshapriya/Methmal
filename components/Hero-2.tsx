@@ -24,7 +24,10 @@ const words = [
 
 const Hero2 = () => {
   return (
-    <section className="relative 2xl:mb-20 xl:mb-40 md:mb-60 mb-40 py-20 md:py-10  w-[80vw] h-[80vh]">
+    <section
+      className="relative 2xl:mb-5 md:mb-14  mb-10   w-[80vw] h-[80vh]"
+      id="home"
+    >
       {/* Spotlights */}
       <div>
         <Spotlight
@@ -51,40 +54,40 @@ const Hero2 = () => {
             <Image
               src="/Hero.png"
               alt="Hero Image"
-              width={600}
-              height={600}
-              className="mx-auto border-b-2 bprder-gray-900 shadow-lg "
+              width={400}
+              height={500}
+              className="mx-auto  shadow-lg "
             />
           </div>
-          <div className="w-[80vw]  2xl:w-[40vw] m-auto xl:py-10  text-center  ">
-            <div className=" hidden 2xl:flex items-center  justify-center text-center  md:text-3xl  text-sm  font-funnel">
+          <div className="w-[80vw]  2xl:w-[40vw] m-auto   text-center  ">
+            <div className=" hidden 2xl:flex items-center  justify-center text-center  md:text-lg  text-sm  font-funnel">
               I'm a passionate
             </div>
-            <div className="font-funnel    flex justify-center">
+            <div className="font-funnel flex justify-center">
               <TypewriterEffectSmooth words={words} className="text-center " />
             </div>
 
-            <p className=" text-slate-300  md:text-3xl mb-10 text-lg  font-thin font-funnel">
+            <p className=" text-slate-300  md:text-xl mb-10 text-base  font-thin font-funnel">
               Full Stack Engineer with a passion for building scalable web
               solutions and exploring the power of Artificial Intelligence. I
               bridge creativity and technology to craft efficient, intelligent,
               and user-focused digital experiences.
             </p>
 
-            <div className="flex  2xl:mt-20 mt-10 items-center justify-center">
-              <div className="flex justify-center lg:gap-40 gap-20">
+            <div className="flex mt-10 items-center justify-center">
+              <div className="flex justify-center lg:gap-30 md:gap-20 gap-10">
                 <div className="flex-col  items-center justify-center">
                   <div className="flex  mb-2 w-full justify-center">
                     <CountUp
                       to={5}
                       duration={2}
-                      className="text-slate-300  text-5xl font-funnel"
+                      className="text-slate-300  text-3xl md:text-4xl lg:text-5xl font-funnel"
                     />
-                    <h1 className="text-slate-300 text-5xl font-bold font-funnel">
+                    <h1 className="text-slate-300 text-3xl md:text-4xl lg:text-5xl font-bold font-funnel">
                       +
                     </h1>
                   </div>
-                  <p className="md:text-xl text-lg text-slate-300 font-thin font-funnel">
+                  <p className="md:text-base text-sm text-slate-300 font-thin font-funnel">
                     Projects
                   </p>
                 </div>
@@ -93,11 +96,11 @@ const Hero2 = () => {
                     <CountUp
                       to={2}
                       duration={2}
-                      className="text-slate-300 text-5xl  w-full font-funnel"
+                      className="text-slate-300 text-3xl md:text-4xl lg:text-5xl  w-full font-funnel"
                     />
                   </div>
 
-                  <p className="md:text-xl text-lg text-slate-300 font-thin font-funnel">
+                  <p className="md:text-base text-sm text-slate-300 font-thin font-funnel">
                     Years Experiance
                   </p>
                 </div>
@@ -106,13 +109,13 @@ const Hero2 = () => {
                     <CountUp
                       to={24}
                       duration={2}
-                      className="text-purple text-5xl font-funnel"
+                      className="text-purple text-3xl md:text-4xl lg:text-5xl font-funnel"
                     />
-                    <h1 className="text-purple text-5xl font-bold font-funnel">
+                    <h1 className="text-purple text-3xl md:text-4xl lg:text-5xl font-bold font-funnel">
                       H
                     </h1>
                   </div>
-                  <p className="md:text-xl text-lg text-purple font-thin font-funnel">
+                  <p className="md:text-base text-sm text-purple font-thin font-funnel">
                     Availabity
                   </p>
                 </div>

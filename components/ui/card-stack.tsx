@@ -55,14 +55,14 @@ export const CardStack = ({
               zIndex: cards.length - index, //  decrease z-index for the cards that are behind
             }}
           >
-            <div className="font-funnel text-xl md:text-2xl text-slate-300">
+            <div className="font-funnel text-sm md:text-xl text-slate-300">
               {card.content}
             </div>
-            <div>
-              <p className="font-funnel text-neutral-500 font-medium text-lg md:text-xl dark:text-white">
+            <div className="mt-1">
+              <p className="font-funnel text-neutral-500 font-medium text-sm md:text-base dark:text-white">
                 {card.name}
               </p>
-              <p className="text-neutral-400 font-funnel text-sm md:text-lg dark:text-neutral-200">
+              <p className="text-neutral-400 font-funnel text-xs md:text-sm dark:text-neutral-200">
                 {card.designation}
               </p>
             </div>

@@ -7,12 +7,12 @@ import { PinContainer } from "./ui/3d-pin";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20 w-full">
+    <div className="py-20 w-full" id="work">
       <div className="flex flex-col items-center font-funnel">
-        <h1 className="md:text-7xl text-white text-5xl font-bold">
+        <h1 className="md:text-5xl text-white text-4xl font-bold">
           Recent <span className="text-purple">Projects</span>
         </h1>
-        <p className="md:text-3xl text-xl text-center font-thin w-[70vw] 2xl:w-[40vw] text-slate-300 mt-4">
+        <p className="md:text-xl text-base text-center font-thin w-[80vw] lg:w-[60vw] text-slate-300 mt-4">
           A showcase of my latest full-stack and AI-driven projects,
           highlighting innovation, functionality, and modern design.
         </p>
@@ -29,7 +29,7 @@ const RecentProjects = () => {
                 title="/ui.aceternity.com"
                 href="https://twitter.com/mannupaaji"
               >
-                <div className="relative flex items-center justify-center sm:w-[600px] w-[80vw] overflow-hidden sm:h-[30vh] h-[30vh]  mb-8">
+                <div className="relative flex items-center justify-center sm:w-[600px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh]  mb-8">
                   <div
                     className="relative w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl "
                     style={{ backgroundColor: "#13162D" }}
@@ -43,7 +43,7 @@ const RecentProjects = () => {
                   />
                 </div>
 
-                <h1 className="font-bold lg:text-2xl md:text-xl text-base line-clamp-1">
+                <h1 className="font-medium lg:text-2xl md:text-xl text-base line-clamp-1">
                   {item.title}
                 </h1>
 

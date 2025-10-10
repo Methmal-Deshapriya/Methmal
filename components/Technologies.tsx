@@ -100,13 +100,13 @@ export default function Technologies() {
   return (
     <div
       style={{ height: "200px", position: "relative", overflow: "hidden" }}
-      className="flex justify-center  mb-20 items-center"
+      className="flex justify-center  mb-10 items-center"
     >
       <LogoLoop
         logos={techLogos}
         speed={80}
         direction="left"
-        logoHeight={54}
+        logoHeight={48}
         gap={40}
         pauseOnHover
         scaleOnHover
