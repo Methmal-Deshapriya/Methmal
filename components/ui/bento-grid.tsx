@@ -47,7 +47,7 @@ export const BentoGridItem = ({
   return (
     <div
       className={cn(
-        "row-span-1 relative overflow-hidden rounded-3xl border  border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 bg-black-100",
+        "row-span-1 relative overflow-hidden rounded-3xl border font-funnel text-slate-300 border-white/[0.1] group/bento hover:shadow-xl transition duration-200 shadow-input dark:shadow-none justify-between flex flex-col space-y-4 bg-black-100",
         className
       )}
     >
@@ -77,15 +77,16 @@ export const BentoGridItem = ({
           )}
         </div>
         {id === 6 && (
-          // add background animation , remove the p tag
-          <LetterGlitch
-            glitchSpeed={100}
-            centerVignette={true}
-            outerVignette={true}
-            smooth={true}
-            glitchColors={["#2b4539", "#61dca3", "#61b3dc"]} // pick colors
-            characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
-          />
+          <div className="absolute top-0 left-0 w-full h-full">
+            <LetterGlitch
+              glitchSpeed={100}
+              centerVignette={true}
+              outerVignette={true}
+              smooth={true}
+              glitchColors={["#2b4539", "#61dca3", "#61b3dc"]} // pick colors
+              characters="ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+            />
+          </div>
         )}
 
         <div
@@ -106,6 +107,7 @@ export const BentoGridItem = ({
             {title}
           </div>
           {id === 1 && <GlobeDemo />}
+
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3  font-sans">
               <div className="flex flex-col gap-3 lg:gap-4">

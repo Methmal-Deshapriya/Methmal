@@ -14,39 +14,42 @@ export function CardStackDemo() {
 const CARDS = [
   {
     id: 0,
-    name: "Manu Arora",
-    designation: "Senior Software Engineer",
+    name: "Pasindu Athukorala",
+    designation: "Lecturer in ICT",
     content: (
       <p>
-        These cards are amazing, <Highlight>I want to use them</Highlight> in my
-        project. Framer motion is a godsend ngl tbh fam 🙏
+        His <Highlight> eagerness </Highlight> to learn and passion for
+        technology are truly inspiring. He never settles for{" "}
+        <Highlight>good enough </Highlight> — always pushing himself to
+        understand every detail and improve with each project.
       </p>
     ),
   },
   {
     id: 1,
-    name: "Elon Musk",
-    designation: "Senior Shitposter",
+    name: "Anushka Sudeera",
+    designation: "ML Engineer",
     content: (
       <p>
-        I dont like this Twitter thing,{" "}
-        <Highlight>deleting it right away</Highlight> because yolo. Instead, I
-        would like to call it <Highlight>X.com</Highlight> so that it can easily
-        be confused with adult sites.
+        He has an exceptional work ethic —{" "}
+        <Highlight> always dedicated, organized, and reliable. </Highlight>{" "}
+        Whether it’s coding late nights or exploring new technologies, he gives
+        100% every time.
       </p>
     ),
   },
   {
     id: 2,
-    name: "Tyler Durden",
-    designation: "Manager Project Mayhem",
+    name: "Sanka Yashodana",
+    designation: "Full Stack Developer",
     content: (
       <p>
-        The first rule of
-        <Highlight>Fight Club</Highlight> is that you do not talk about fight
-        club. The second rule of
-        <Highlight>Fight club</Highlight> is that you DO NOT TALK about fight
-        club.
+        Working with him on group projects was an absolute pleasure. He brings
+        <Highlight>
+          {" "}
+          positivity, great communication, and strong collaboration skills{" "}
+        </Highlight>{" "}
+        that make every team more productive and motivated
       </p>
     ),
   },

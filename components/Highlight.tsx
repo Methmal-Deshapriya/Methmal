@@ -6,8 +6,6 @@ export const Highlight = ({
   className?: string;
 }) => {
   return (
-    <span className="font-bold   text-cyan-500 rounded-md px-1 py-0.5">
-      {children}
-    </span>
+    <span className=" text-purple rounded-md px-1 py-0.5">{children}</span>
   );
 };

@@ -9,13 +9,12 @@ const RecentProjects = () => {
   return (
     <div className="py-20 w-full">
       <div className="flex flex-col items-center font-funnel">
-        <h1 className="text-4xl font-bold uppercase">
+        <h1 className="md:text-7xl text-white text-5xl font-bold">
           Recent <span className="text-purple">Projects</span>
         </h1>
-        <p className="text-lg text-center font-funnel font-light w-[70vw] lg:w-[40vw] text-gray-400 mt-4">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-          tristique, nulla et aliquam tincidunt, nisl nisi aliquet nisl, sed
-          aliquet nisl nisi nisl.
+        <p className="md:text-3xl text-xl text-center font-thin w-[70vw] 2xl:w-[40vw] text-slate-300 mt-4">
+          A showcase of my latest full-stack and AI-driven projects,
+          highlighting innovation, functionality, and modern design.
         </p>
       </div>
 
