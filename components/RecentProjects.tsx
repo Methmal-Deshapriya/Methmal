@@ -7,7 +7,7 @@ import { PinContainer } from "./ui/3d-pin";
 
 const RecentProjects = () => {
   return (
-    <div className="py-20 w-full" id="work">
+    <div className="pt-20 w-full" id="work">
       <div className="flex flex-col items-center font-funnel">
         <h1 className="md:text-5xl text-white text-4xl font-bold">
           Recent <span className="text-purple">Projects</span>
@@ -32,7 +32,7 @@ const RecentProjects = () => {
                 <div className="relative flex items-center justify-center sm:w-[600px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh]  mb-8">
                   <div
                     className="relative w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl "
-                    style={{ backgroundColor: "#13162D" }}
+                    style={{ backgroundColor: "#140321" }}
                   >
                     <img src="/bg.png" alt="bg-img" />
                   </div>
@@ -72,11 +72,11 @@ const RecentProjects = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-center items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-purple">
-                      Check Live Site
+                  <div className="flex justify-center border rounded-full p-1 px-2 items-center">
+                    <p className="flex lg:text-xl md:text-xs text-sm text-white">
+                      Site
                     </p>
-                    <FaLocationArrow className="ms-3" color="#CBACF9" />
+                    <FaLocationArrow className="ms-3" color="#ffffFf" />
                   </div>
                 </div>
               </PinContainer>

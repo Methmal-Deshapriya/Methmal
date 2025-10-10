@@ -1,6 +1,5 @@
 import { cn } from "@/utils/cn";
 import { BackgroundGradientAnimation } from "./background-gradient-animation";
-import { GlobeDemo } from "./GlobeDemo";
 import { div } from "motion/react-client";
 import LetterGlitch from "./letter-glitch";
 
@@ -106,7 +105,6 @@ export const BentoGridItem = ({
           >
             {title}
           </div>
-          {/* {id === 1 && <GlobeDemo />} */}
 
           {id === 3 && (
             <div className="flex gap-1 lg:gap-5 w-fit absolute -right-3  font-sans">

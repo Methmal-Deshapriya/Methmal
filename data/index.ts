@@ -14,7 +14,7 @@ export const gridItems = [
       "lg:col-span-3 md:col-span-6 md:row-span-4 h-[20vh] md:h-[30vh] lg:min-h-[60vh]",
     imgClassName: "w-full h-full",
     titleClassName: "justify-end",
-    img: "",
+    img: "/vr.png",
     spareImg: "",
   },
   {
@@ -24,7 +24,7 @@ export const gridItems = [
     className: "lg:col-span-2 md:col-span-3 md:row-span-3 ",
     imgClassName: "w-full h-full",
     titleClassName: "justify-start",
-    img: "/b1.svg",
+    img: "/globe.svg",
     spareImg: "",
   },
   {
