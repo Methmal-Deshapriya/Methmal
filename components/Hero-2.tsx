@@ -18,7 +18,7 @@ const words = [
   },
   {
     text: "Engineer",
-    className: "dark:text-purple",
+    className: "dark:text-purple ",
   },
 ];
 
@@ -52,16 +52,16 @@ const Hero2 = () => {
         <div className="relative  md:flex flex-wrap items-center justify-center z-20 bg-gradient-to-b from-neutral-200 to-neutral-500 bg-clip-text  text-4xl font-bold text-transparent sm:text-7xl">
           <div className="">
             <Image
-              src="/Hero.png"
+              src="/avatar3.png"
               alt="Hero Image"
-              width={400}
+              width={500}
               height={500}
               className="mx-auto  shadow-lg "
             />
           </div>
           <div className="w-[80vw]  2xl:w-[40vw] m-auto   text-center  ">
             <div className=" hidden 2xl:flex items-center  justify-center text-center  md:text-lg  text-sm  font-funnel">
-              I'm a passionate
+              I&apos;m a passionate
             </div>
             <div className="font-funnel flex justify-center">
               <TypewriterEffectSmooth words={words} className="text-center " />

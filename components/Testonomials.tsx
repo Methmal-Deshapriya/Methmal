@@ -33,8 +33,8 @@ const CARDS = [
       <p>
         He has an exceptional work ethic —{" "}
         <Highlight> always dedicated, organized, and reliable. </Highlight>{" "}
-        Whether it’s coding late nights or exploring new technologies, he gives
-        100% every time.
+        Whether it&apos;s coding late nights or exploring new technologies, he
+        gives 100% every time.
       </p>
     ),
   },

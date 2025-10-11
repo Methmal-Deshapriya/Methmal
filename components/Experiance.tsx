@@ -91,7 +91,7 @@ export function StickyScrollRevealDemo() {
           learning, and a passion for creating meaningful technological impact.
         </p>
       </div>
-      <div className="w-full 2xl:flex  justify-center gap-10 items-center  ">
+      <div className="relative w-full 2xl:flex  justify-center gap-10 items-center  ">
         <div className="2xl:w-[40vw] flex items-center justify-center  w-full  h-[30rem]">
           <CardStackDemo />
         </div>
