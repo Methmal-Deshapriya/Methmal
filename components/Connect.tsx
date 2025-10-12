@@ -8,42 +8,8 @@ import {
 import React from "react";
 import { ConnectScrollDemo } from "@/components/ContainerScroll";
 import Dock from "./ui/dock";
-import Image from "next/image";
-const items = [
-  {
-    icon: <FaGithub size={18} />,
-    label: "Github",
-    onClick: () =>
-      window.open("https://github.com/Methmal-Deshapriya", "_blank"),
-  },
+import { items } from "./Media";
 
-  {
-    icon: <FaWhatsapp size={18} />,
-    label: "Whatsapp",
-    onClick: () => window.open("https://wa.me/94757451258", "_blank"),
-  },
-  {
-    icon: <FaLinkedinIn size={18} />,
-    label: "LinkedIn",
-    onClick: () =>
-      window.open("https://www.linkedin.com/in/methmal-deshapriya", "_blank"),
-  },
-  {
-    icon: <FaInstagram size={18} />,
-    label: "Instagram",
-    onClick: () =>
-      window.open(
-        "https://www.instagram.com/__methmal__?igsh=eXdweHE3cmdlbzI5",
-        "_blank"
-      ),
-  },
-  {
-    icon: <FaMediumM size={18} />,
-    label: "Medium",
-    onClick: () =>
-      window.open("https://medium.com/@methmaldeshapriya2002", "_blank"),
-  },
-];
 export function MacbookScrollDemo() {
   return (
     <div className=" relative flex flex-col w-full h-full  ">

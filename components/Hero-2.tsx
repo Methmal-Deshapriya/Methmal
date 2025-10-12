@@ -54,6 +54,7 @@ const Hero2 = () => {
             <Image
               src="/avatar3.png"
               alt="Hero Image"
+              priority
               width={500}
               height={500}
               className="mx-auto  shadow-lg "

@@ -1,8 +1,6 @@
 import React from "react";
 import Button from "./Button";
-
-import { Highlight } from "./Highlight";
-
+import { items } from "./Media";
 const Footer = () => {
   return (
     <div
@@ -31,7 +29,32 @@ const Footer = () => {
         <div className=" flex justify-center items-center gap-10 mt-20 mb-">
           <Button className="font-funnel z-10 px-7 py-3 text-lg" />
         </div>
-        <div className="relative  h-[30vh] flex justify-cente "></div>
+        <div className="h-[20vh]"></div>
+        <footer className="  text-slate-400 font-funnel flex flex-col md:flex-row justify-between items-center ">
+          <div className="mb-4 md:mb-0">
+            Copyright © 2024 Methmal Deshapriya{" "}
+          </div>
+          <div className=" flex gap-2  z-10">
+            <div
+              className="border-[1px] cursor-pointer flex items-center justify-center border-purple-100  w-10 h-10 rounded-full"
+              onClick={items[2].onClick}
+            >
+              {items[2].icon}
+            </div>
+            <div
+              className="border-[1px] cursor-pointer border-purple-100 flex items-center justify-center w-10 h-10 rounded-full"
+              onClick={items[1].onClick}
+            >
+              {items[1].icon}
+            </div>
+            <div
+              className=" border-[1px] cursor-pointer border-purple-100 flex items-center justify-center w-10 h-10 rounded-full"
+              onClick={items[3].onClick}
+            >
+              {items[3].icon}
+            </div>
+          </div>
+        </footer>
       </div>
     </div>
   );
