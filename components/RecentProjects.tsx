@@ -29,7 +29,7 @@ const RecentProjects = () => {
                 title="/ui.aceternity.com"
                 href="https://twitter.com/mannupaaji"
               >
-                <div className="relative flex items-center justify-center sm:w-[600px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh]  mb-8">
+                <div className="relative flex items-center   justify-center sm:w-[600px] w-[80vw] overflow-hidden sm:h-[40vh] h-[30vh]  mb-8">
                   <div
                     className="relative w-full h-full overflow-hidden rounded-2xl lg:rounded-3xl "
                     style={{ backgroundColor: "#140321" }}
@@ -72,11 +72,14 @@ const RecentProjects = () => {
                     ))}
                   </div>
 
-                  <div className="flex justify-center border rounded-full p-1 px-2 items-center">
-                    <p className="flex lg:text-xl md:text-xs text-sm text-white">
+                  <div className="flex bg-[#140321] justify-center rounded-full py-1 px-4 items-center">
+                    <p className="flex  lg:text-xl md:text-sm text-xs text-white">
                       Site
                     </p>
-                    <FaLocationArrow className="ms-3" color="#ffffFf" />
+                    <FaLocationArrow
+                      className="ms-1 md:ms-2 w-2 h-2 md:w-3 md:h-3 "
+                      color="#ffffFf"
+                    />
                   </div>
                 </div>
               </PinContainer>

@@ -1,9 +1,6 @@
 "use client";
 
 import React, { useState } from "react";
-import { cn } from "@/utils/cn";
-import { text } from "stream/consumers";
-import { a, div } from "motion/react-client";
 
 // optional helper if you're using class merging
 
@@ -18,32 +15,24 @@ const Button: React.FC<ButtonProps> = ({
   className,
   ...props
 }) => {
-  const [isDownloaded, setDownloaded] = useState(false);
+  const [text, setText] = useState("Download CV");
 
   const handleClick = (e: React.MouseEvent<HTMLButtonElement>) => {
-    setDownloaded(true);
+    setText("Downloaded");
+    setTimeout(() => {
+      setText("Download CV");
+    }, 3000);
   };
   return (
-    <div className="z-10">
-      {!isDownloaded && (
-        <a
-          href="/Methmal_Deshapriya_CV.pdf"
-          download="Methmal_Deshapriya_CV.pdf"
+    <div className="z-10  relative">
+      <a href="/Methmal_Deshapriya_CV.pdf" download="Methmal_Deshapriya_CV.pdf">
+        <button
+          className="bg-[#530080] py-3 px-5 rounded-full font-funnel shadow-xl shadow-black/[0.1] hover:shadow-black/[0.2] transition-all duration-300 ease-in-out hover:scale-105 items-center justify-center    outline-none "
+          onClick={handleClick}
         >
-          <button
-            className={cn(
-              "font-funnel  box-border border-2 border-white focus:border-none hover:border-purple text-white hover:text-purple rounded-xl",
-              "bg-transparent shadow-[0_0_15px_rgba(255,255,255,0.4)] hover:shadow-[0_0_25px_rgba(104,0,159,0.8)]",
-              "transition-all duration-300 ease-in-out hover:scale-105",
-              "items-center justify-center font-medium rounded-lg transition-colors focus:outline-none focus:ring-2 focus:ring-offset-2",
-              className
-            )}
-            onClick={handleClick}
-          >
-            Download CV
-          </button>
-        </a>
-      )}
+          {text}
+        </button>
+      </a>
     </div>
   );
 };

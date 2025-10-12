@@ -96,7 +96,7 @@ export default function Technologies() {
   return (
     <div
       style={{ height: "200px", position: "relative", overflow: "hidden" }}
-      className="flex justify-center  mb-10 items-center"
+      className="flex justify-center mt-10 2xl:mt-0 mb-10 items-center "
     >
       <LogoLoop
         logos={techLogos}

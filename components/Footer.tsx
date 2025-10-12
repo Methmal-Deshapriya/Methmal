@@ -1,45 +1,8 @@
 import React from "react";
 import Button from "./Button";
-import {
-  FaFacebookSquare,
-  FaInstagramSquare,
-  FaMedium,
-  FaGithubSquare,
-  FaWhatsappSquare,
-} from "react-icons/fa";
-import { ImMail } from "react-icons/im";
-import { BsLinkedin } from "react-icons/bs";
+
 import { Highlight } from "./Highlight";
-import Dock from "./ui/dock";
 
-const items = [
-  {
-    icon: <FaGithubSquare size={18} />,
-    label: "Github",
-    onClick: () => alert("Archive!"),
-  },
-
-  {
-    icon: <FaWhatsappSquare size={18} />,
-    label: "Whatsapp",
-    onClick: () => alert("Settings!"),
-  },
-  {
-    icon: <BsLinkedin size={18} />,
-    label: "LinkedIn",
-    onClick: () => alert("Settings!"),
-  },
-  {
-    icon: <FaInstagramSquare size={18} />,
-    label: "Instagram",
-    onClick: () => alert("Settings!"),
-  },
-  {
-    icon: <ImMail size={18} />,
-    label: "Gmail",
-    onClick: () => alert("Settings!"),
-  },
-];
 const Footer = () => {
   return (
     <div
@@ -61,25 +24,14 @@ const Footer = () => {
         <p className=" text-base md:text-xl text-center font-medium  w-[80vw] 2xl:w-[60vw] mx-auto font-funnel  text-slate-300 mt-4">
           Thank you for visiting my portfolio. I&apos;m passionate about
           creating impactful digital experiences through full-stack engineering,
-          machine learning, and data science.{" "}
-          <span className="text-purple">
-            I&apos;m currently available for work and collaborations
-          </span>
-          , so if you have an idea or project in mind — let’s connect and make
-          it happen.
+          machine learning, and data science. I&apos;m currently available for
+          work and collaborations , so if you have an idea or project in mind —
+          let’s connect and make it happen.
         </p>
         <div className=" flex justify-center items-center gap-10 mt-20 mb-">
           <Button className="font-funnel z-10 px-7 py-3 text-lg" />
         </div>
-        <div className="relative  h-[30vh] flex justify-cente ">
-          <Dock
-            items={items}
-            panelHeight={68}
-            baseItemSize={50}
-            magnification={70}
-            className="font-funnel "
-          />
-        </div>
+        <div className="relative  h-[30vh] flex justify-cente "></div>
       </div>
     </div>
   );

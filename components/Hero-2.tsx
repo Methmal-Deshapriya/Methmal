@@ -25,7 +25,7 @@ const words = [
 const Hero2 = () => {
   return (
     <section
-      className="relative 2xl:mb-5 md:mb-14  mb-10   w-[80vw] h-[80vh]"
+      className="relative 2xl:mb-10 md:mb-24 sm:mb-12 mb-8 w-[80vw] h-[80vh]"
       id="home"
     >
       {/* Spotlights */}
