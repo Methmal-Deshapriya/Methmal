@@ -61,7 +61,7 @@ const Hero2 = () => {
             />
           </div>
           <div className="w-[80vw]  2xl:w-[40vw] m-auto   text-center  ">
-            <div className=" hidden 2xl:flex items-center  justify-center text-center  md:text-lg  text-sm  font-funnel">
+            <div className=" hidden 2xl:flex items-center -mb-4 justify-center text-center  md:text-lg  text-sm  font-funnel">
               I&apos;m a passionate
             </div>
             <div className="font-funnel flex justify-center">
