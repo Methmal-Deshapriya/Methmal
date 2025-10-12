@@ -23,7 +23,7 @@ export function ConnectScrollDemo() {
       >
         <picture>
           <source
-            srcSet={`/desktop.png`}
+            srcSet={`/try-desktop.png`}
             type="image/png"
             media="(min-width:1127px)"
           />
