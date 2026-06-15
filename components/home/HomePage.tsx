@@ -1,5 +1,3 @@
-"use client";
-
 import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,8 +6,6 @@ import {
   ArrowUpRight,
   BrainCircuit,
   BriefcaseBusiness,
-  FileText,
-  GraduationCap,
   Layers3,
   Sparkles,
 } from "lucide-react";
@@ -116,27 +112,33 @@ const expertiseCards = [
   },
 ] as const;
 
-const pageCards = [
+const interestCards = [
   {
-    title: "Education page",
+    index: "01",
+    title: "Full-Stack engineering",
     description:
-      "Academic story, achievements, and the learning path behind the engineering mindset.",
-    href: "/education",
-    icon: GraduationCap,
+      "Thoughtful product engineering, strong foundations, and software that stays reliable as it grows.",
+    icon: Layers3,
+    marker: "Product systems",
+    accent: "soft" as const,
   },
   {
-    title: "Foundry page",
+    index: "02",
+    title: "DevOps & systems",
     description:
-      "A focused page about vision, leadership, and the operational side of building Foundry Academy.",
-    href: "/foundry",
+      "Deployment flow, infrastructure thinking, and the systems mindset behind dependable delivery.",
     icon: BriefcaseBusiness,
+    marker: "Operational clarity",
+    accent: "dark" as const,
   },
   {
-    title: "Blog page",
+    index: "03",
+    title: "AI / ML",
     description:
-      "A clean reading surface for technical writing, experiments, and builder reflections.",
-    href: "/blogs",
-    icon: FileText,
+      "Applied AI, practical experimentation, and building products that use intelligence in useful ways.",
+    icon: BrainCircuit,
+    marker: "Applied intelligence",
+    accent: "primary" as const,
   },
 ] as const;
 
@@ -204,9 +206,13 @@ function CapabilityCard({
       : "bg-white/10 text-white/80";
 
   return (
-    <article className={`${toneClass} flex min-h-[320px] flex-col rounded-[28px] p-8`}>
+    <article
+      className={`${toneClass} flex min-h-[320px] flex-col rounded-[28px] p-8`}
+    >
       <div className="flex items-center justify-between">
-        <span className={`font-mono text-[11px] uppercase tracking-[0.24em] ${mutedText}`}>
+        <span
+          className={`font-mono text-[11px] uppercase tracking-[0.24em] ${mutedText}`}
+        >
           {index}
         </span>
         <ArrowRight className={`h-4 w-4 ${mutedText}`} />
@@ -219,10 +225,117 @@ function CapabilityCard({
 
       <div className="mt-auto flex flex-wrap gap-2 pt-8">
         {chips.map((chip) => (
-          <span key={chip} className={`rounded-full px-3 py-1 text-xs ${chipClass}`}>
+          <span
+            key={chip}
+            className={`rounded-full px-3 py-1 text-xs ${chipClass}`}
+          >
             {chip}
           </span>
         ))}
+      </div>
+    </article>
+  );
+}
+
+function InterestCard({
+  index,
+  title,
+  description,
+  icon,
+  marker,
+  accent,
+}: (typeof interestCards)[number]) {
+  const Icon = icon;
+
+  const toneClass =
+    accent === "dark"
+      ? "bg-[linear-gradient(145deg,rgba(27,27,35,1),rgba(38,38,52,0.96))] text-white border-[rgba(255,255,255,0.06)]"
+      : accent === "primary"
+        ? "bg-[linear-gradient(145deg,rgba(94,92,230,0.96),rgba(123,112,255,0.92))] text-white border-[rgba(126,123,255,0.18)]"
+        : "bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(244,240,255,0.96))] text-[var(--editorial-foreground)] border-[rgba(119,117,134,0.12)]";
+
+  const mutedClass =
+    accent === "soft"
+      ? "text-[var(--editorial-muted)]"
+      : "text-white/72";
+
+  const badgeClass =
+    accent === "soft"
+      ? "border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.06)] text-[var(--editorial-primary)]"
+      : "border-white/10 bg-white/8 text-white/78";
+
+  const iconShellClass =
+    accent === "soft"
+      ? "bg-[rgba(94,92,230,0.1)] text-[var(--editorial-primary)]"
+      : "bg-white/10 text-white";
+
+  return (
+    <article
+      className={`${toneClass} group relative overflow-hidden rounded-[28px] border p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7`}
+    >
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className={`absolute -right-10 top-0 h-28 w-28 rounded-full blur-3xl ${
+            accent === "soft"
+              ? "bg-[rgba(94,92,230,0.12)]"
+              : "bg-white/10"
+          }`}
+        />
+        <div
+          className={`absolute bottom-5 right-5 h-12 w-16 border-b border-r ${
+            accent === "soft" ? "border-[rgba(94,92,230,0.12)]" : "border-white/10"
+          }`}
+        />
+        <div
+          className={`absolute left-0 top-0 h-full w-1 ${
+            accent === "primary"
+              ? "bg-white/24"
+              : accent === "dark"
+                ? "bg-[rgba(94,92,230,0.5)]"
+                : "bg-[rgba(94,92,230,0.65)]"
+          }`}
+        />
+      </div>
+
+      <div className="relative flex h-full flex-col">
+        <div className="flex items-start justify-between gap-4">
+          <div className="flex items-center gap-4">
+            <div
+              className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-[18px] ${iconShellClass}`}
+            >
+              <Icon className="h-5 w-5" />
+            </div>
+            <div>
+              <p className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}>
+                {index}
+              </p>
+              <h3 className="mt-2 font-hanken text-2xl font-semibold tracking-[-0.04em]">
+                {title}
+              </h3>
+            </div>
+          </div>
+
+          <span
+            className={`rounded-full border px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] ${badgeClass}`}
+          >
+            {marker}
+          </span>
+        </div>
+
+        <p className={`mt-5 max-w-md text-sm leading-7 md:text-[15px] ${mutedClass}`}>
+          {description}
+        </p>
+
+        <div className="mt-6 flex items-center gap-3">
+          <span
+            className={`h-px flex-1 ${
+              accent === "soft" ? "bg-[rgba(94,92,230,0.14)]" : "bg-white/10"
+            }`}
+          />
+          <span className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}>
+            Interested
+          </span>
+        </div>
       </div>
     </article>
   );
@@ -247,8 +360,7 @@ export function HomePage() {
                 <span className="font-light italic text-[var(--editorial-primary)]">
                   new era
                 </span>{" "}
-                of
-                software engineering.
+                of software engineering.
               </h1>
 
               <p className="mt-8 max-w-2xl border-l border-[rgba(119,117,134,0.22)] pl-6 text-lg leading-8 text-[var(--editorial-muted)]">
@@ -287,7 +399,10 @@ export function HomePage() {
               {Array.from({ length: 3 }).map((_, groupIndex) => (
                 <div key={groupIndex} className="ticker-group">
                   {tickerItems.map((item) => (
-                    <span key={`${groupIndex}-${item}`} className="flex items-center gap-3">
+                    <span
+                      key={`${groupIndex}-${item}`}
+                      className="flex items-center gap-3"
+                    >
                       <span className="h-1.5 w-1.5 rounded-full bg-[rgba(94,92,230,0.55)]" />
                       {item}
                     </span>
@@ -305,12 +420,13 @@ export function HomePage() {
                 About
               </p>
               <h2 className="mt-4 font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)] md:text-4xl">
-                The person behind the code.
+                A software builder with engineering depth and founder energy.
               </h2>
               <p className="mt-5 max-w-3xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
-                I care about software engineering that stays reliable under real
-                pressure. The goal is not just to build fast, but to build with
-                clarity, structure, and thoughtful execution.
+                I&apos;m Methmal Deshapriya. I care about building software that
+                feels polished on the surface and reliable underneath, with a
+                strong respect for clarity, systems thinking, and thoughtful
+                execution.
               </p>
 
               <div className="mt-8 grid gap-4 md:grid-cols-2">
@@ -319,49 +435,27 @@ export function HomePage() {
                     Location
                   </p>
                   <p className="mt-2 text-base leading-7 text-[var(--editorial-foreground)]">
-                    Sri Lanka - open for collaboration
+                    Sri Lanka - open to meaningful collaboration, software work,
+                    and ambitious digital products.
                   </p>
                 </div>
                 <div className="rounded-2xl border border-[rgba(119,117,134,0.12)] bg-white/60 p-5">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--editorial-muted-soft)]">
-                    Portfolio approach
+                    Current focus
                   </p>
                   <p className="mt-2 text-base leading-7 text-[var(--editorial-foreground)]">
-                    Separate pages for depth, with the homepage acting as the calm entry point.
+                    Growing through product building, engineering practice, and
+                    long-term systems thinking across software, infrastructure,
+                    and intelligent products.
                   </p>
                 </div>
               </div>
             </div>
 
             <div className="grid gap-4 lg:col-span-5">
-              {pageCards.map((item) => {
-                const Icon = item.icon;
-
-                return (
-                  <Link
-                    key={item.title}
-                    href={item.href}
-                    className="group rounded-[26px] border border-[rgba(119,117,134,0.12)] bg-white/62 p-5 transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(94,92,230,0.2)]"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-[rgba(94,92,230,0.09)] text-[var(--editorial-primary)]">
-                        <Icon className="h-4 w-4" />
-                      </div>
-                      <div className="flex-1">
-                        <div className="flex items-start justify-between gap-3">
-                          <h3 className="font-medium text-[var(--editorial-foreground)]">
-                            {item.title}
-                          </h3>
-                          <ArrowUpRight className="h-4 w-4 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
-                        </div>
-                        <p className="mt-2 text-sm leading-6 text-[var(--editorial-muted)]">
-                          {item.description}
-                        </p>
-                      </div>
-                    </div>
-                  </Link>
-                );
-              })}
+              {interestCards.map((item) => (
+                <InterestCard key={item.title} {...item} />
+              ))}
             </div>
           </div>
         </SectionReveal>
@@ -417,7 +511,9 @@ export function HomePage() {
                   <div key={role} className="relative">
                     <span
                       className={`absolute -left-[28px] top-2.5 h-2.5 w-2.5 rounded-full ${
-                        index === 0 ? "bg-[var(--editorial-primary)]" : "bg-white/35"
+                        index === 0
+                          ? "bg-[var(--editorial-primary)]"
+                          : "bg-white/35"
                       }`}
                     />
                     <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
@@ -451,8 +547,8 @@ export function HomePage() {
                 </p>
                 <h3 className="mt-5 font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)]">
                   Building the future with{" "}
-                  <span className="text-[var(--editorial-primary)]">AI</span> and
-                  engineering discipline.
+                  <span className="text-[var(--editorial-primary)]">AI</span>{" "}
+                  and engineering discipline.
                 </h3>
                 <p className="mt-5 text-base leading-8 text-[var(--editorial-muted)]">
                   Stronger systems, cleaner interfaces, and product work that
