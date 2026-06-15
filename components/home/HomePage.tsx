@@ -2,7 +2,6 @@ import type { ReactNode } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import {
-  ArrowRight,
   ArrowUpRight,
   BrainCircuit,
   BriefcaseBusiness,
@@ -81,53 +80,29 @@ const pathwayCards = [
 
 const capabilityCards = [
   {
-    index: "01",
     title: "Product Engineering",
     description:
       "Shipping software with a strong product sense, clear technical structure, and a polished user-facing experience.",
-    chips: ["Full stack", "Execution", "Product taste"],
-    tone: "light" as const,
+    points: ["Full stack", "Execution", "Product taste"],
+    icon: Layers3,
   },
   {
-    index: "02",
     title: "Backend Architecture",
     description:
       "Designing the foundations behind APIs, data flow, and systems that need to stay reliable as they grow.",
-    chips: ["System design", "APIs", "Reliability"],
-    tone: "dark" as const,
+    points: ["System design", "APIs", "Reliability"],
+    icon: BriefcaseBusiness,
   },
   {
-    index: "03",
     title: "Frontend Engineering",
     description:
       "Crafting interfaces that feel intentional in spacing, interaction, hierarchy, and performance.",
-    chips: ["Next.js", "UI systems", "Performance"],
-    tone: "primary" as const,
-  },
-] as const;
-
-const expertiseCards = [
-  {
-    icon: Layers3,
-    title: "Systems thinking",
-    description:
-      "Thinking in structure, boundaries, resilience, and the tradeoffs behind scalable software.",
     points: [
-      "service boundaries",
-      "application architecture",
-      "technical decision-making",
+      "Next.js",
+      "UI systems",
+      "Performance",
     ],
-  },
-  {
-    icon: BrainCircuit,
-    title: "Applied AI",
-    description:
-      "Integrating AI into products in a way that still respects strong engineering fundamentals.",
-    points: [
-      "AI product integration",
-      "workflow automation",
-      "tooling for builders",
-    ],
+    icon: Sparkles,
   },
 ] as const;
 
@@ -169,227 +144,50 @@ function SurfaceTag({ children }: { children: ReactNode }) {
   );
 }
 
-function PathwayCard({
+function PathwayLink({
   index,
   title,
   description,
   href,
   badge,
-  accent,
-  wide,
-  platforms,
 }: (typeof pathwayCards)[number]) {
-  const toneClass =
-    accent === "dark"
-      ? "bg-[linear-gradient(145deg,rgba(27,27,35,1),rgba(37,37,49,0.98))] text-white border-[rgba(255,255,255,0.06)]"
-      : accent === "primary"
-        ? "bg-[linear-gradient(145deg,rgba(94,92,230,0.96),rgba(123,112,255,0.92))] text-white border-[rgba(126,123,255,0.18)]"
-        : accent === "wide"
-          ? "bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(244,240,255,0.98))] text-[var(--editorial-foreground)] border-[rgba(119,117,134,0.12)]"
-          : "bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(248,246,255,0.98))] text-[var(--editorial-foreground)] border-[rgba(119,117,134,0.12)]";
-
-  const mutedClass =
-    accent === "soft" || accent === "wide"
-      ? "text-[var(--editorial-muted)]"
-      : "text-white/74";
-
-  const badgeClass =
-    accent === "soft" || accent === "wide"
-      ? "border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.06)] text-[var(--editorial-primary)]"
-      : "border-white/10 bg-white/8 text-white/76";
-
-  const lineClass =
-    accent === "soft" || accent === "wide"
-      ? "bg-[rgba(94,92,230,0.14)]"
-      : "bg-white/10";
-
-  const frameClass =
-    accent === "soft" || accent === "wide"
-      ? "border-[rgba(119,117,134,0.12)] bg-[rgba(255,255,255,0.58)]"
-      : "border-white/10 bg-white/5";
-
-  const cornerClass =
-    accent === "soft" || accent === "wide"
-      ? "border-[rgba(94,92,230,0.22)]"
-      : "border-white/14";
-
   return (
     <Link
       href={href}
-      className={`${toneClass} ${wide ? "md:col-span-2" : ""} group relative flex min-h-[260px] h-full flex-col overflow-hidden rounded-[30px] border p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7`}
+      className="group relative flex h-full flex-col border-t border-[rgba(119,117,134,0.12)] pt-6 transition-transform duration-300 hover:-translate-y-0.5"
     >
-      <div className="pointer-events-none absolute inset-0">
-        <div
-          className={`absolute -right-10 top-0 h-28 w-28 rounded-full blur-3xl ${
-            accent === "primary"
-              ? "bg-white/12"
-              : accent === "dark"
-                ? "bg-[rgba(94,92,230,0.18)]"
-                : "bg-[rgba(94,92,230,0.12)]"
-          }`}
-        />
-        <div
-          className={`absolute bottom-6 right-6 h-12 w-16 border-b border-r ${
-            accent === "soft" || accent === "wide" ? cornerClass : "border-white/10"
-          }`}
-        />
-        <div
-          className={`absolute left-0 top-0 h-full w-1 ${
-            accent === "primary"
-              ? "bg-white/22"
-              : accent === "dark"
-                ? "bg-[rgba(94,92,230,0.55)]"
-                : "bg-[rgba(94,92,230,0.65)]"
-          }`}
-        />
-      </div>
+      <div className="pointer-events-none absolute right-0 top-0 h-20 w-20 rounded-full bg-[radial-gradient(circle,rgba(94,92,230,0.12),transparent_70%)] opacity-0 blur-2xl transition-opacity duration-300 group-hover:opacity-100" />
 
-      <div className="relative flex h-full flex-col">
+      <div className="flex h-full flex-col">
         <div className="flex items-start justify-between gap-4">
-          <div>
-            <p className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}>
+          <div className="min-w-0">
+            <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
               {index}
             </p>
-            <h3 className="mt-3 font-hanken text-2xl font-semibold tracking-[-0.04em] md:text-[2rem]">
+            <h3 className="mt-3 font-hanken text-2xl font-semibold tracking-[-0.04em] text-[var(--editorial-foreground)] md:text-[1.9rem]">
               {title}
             </h3>
           </div>
-          <span
-            className={`rounded-full border px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] ${badgeClass}`}
-          >
-            {badge}
-          </span>
+          <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
         </div>
 
-        <p
-          className={`mt-4 text-base leading-7 ${mutedClass} ${
-            wide ? "max-w-3xl" : "max-w-md"
-          }`}
-        >
+        <p className="mt-4 max-w-md text-base leading-7 text-[var(--editorial-muted)]">
           {description}
         </p>
 
-        <div className="mt-auto pt-8">
-          {wide ? (
-            <div className="grid gap-5 md:grid-cols-[1.35fr_0.9fr] md:items-end">
-              <div
-                className={`relative overflow-hidden rounded-[24px] border ${frameClass} px-5 py-5 md:px-6`}
-              >
-                <div className="absolute inset-0 dot-grid opacity-75" />
-                <div className={`absolute left-6 top-0 h-12 w-16 border-l border-b ${cornerClass}`} />
-                <div className={`absolute bottom-0 right-6 h-10 w-14 border-r border-t ${cornerClass}`} />
-
-                <div className="relative">
-                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
-                    Digital presence
-                  </p>
-                  <div className="mt-4 flex flex-wrap gap-2.5">
-                    {platforms?.map((platform) => (
-                      <span
-                        key={platform}
-                        className="rounded-full border border-[rgba(94,92,230,0.12)] bg-white/72 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]"
-                      >
-                        {platform}
-                      </span>
-                    ))}
-                  </div>
-                </div>
-              </div>
-
-              <div className="flex items-end justify-between gap-6 md:justify-end">
-                <div className="flex flex-col items-start gap-2">
-                  <span className={`h-px w-16 ${lineClass}`} />
-                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted)]">
-                    Profiles & updates
-                  </p>
-                </div>
-                <ArrowUpRight className="h-5 w-5 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
-              </div>
-            </div>
-          ) : (
-            <div className="flex items-end justify-between gap-6">
-              <div
-                className={`relative h-20 flex-1 overflow-hidden rounded-[22px] border ${frameClass}`}
-              >
-                <div className="absolute inset-0 dot-grid opacity-75" />
-                <div className={`absolute bottom-0 left-5 h-10 w-14 border-r border-t ${cornerClass}`} />
-                <div
-                  className={`absolute right-5 top-5 h-6 w-10 border-b border-l ${
-                    accent === "soft" || accent === "wide"
-                      ? "border-[rgba(119,117,134,0.18)]"
-                      : "border-white/12"
-                  }`}
-                />
-              </div>
-              <div className="flex flex-col items-end gap-3">
-                <span className={`h-px w-14 ${lineClass}`} />
-                <ArrowUpRight
-                  className={`h-5 w-5 shrink-0 transition-colors duration-300 ${
-                    accent === "soft" || accent === "wide"
-                      ? "text-[var(--editorial-muted)] group-hover:text-[var(--editorial-primary)]"
-                      : "text-white/62 group-hover:text-white"
-                  }`}
-                />
-              </div>
-            </div>
-          )}
+        <div className="mt-auto flex items-end justify-between gap-6 pt-8">
+          <span className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.05)] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]">
+            {badge}
+          </span>
+          <div className="flex items-center gap-3">
+            <span className="h-px w-14 bg-[rgba(94,92,230,0.14)]" />
+            <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted)]">
+              Open
+            </span>
+          </div>
         </div>
       </div>
     </Link>
-  );
-}
-
-function CapabilityCard({
-  index,
-  title,
-  description,
-  chips,
-  tone,
-}: (typeof capabilityCards)[number]) {
-  const toneClass =
-    tone === "dark"
-      ? "bg-[var(--editorial-foreground)] text-white"
-      : tone === "primary"
-        ? "bg-[var(--editorial-primary)] text-white"
-        : "editorial-panel text-[var(--editorial-foreground)]";
-
-  const mutedText =
-    tone === "light" ? "text-[var(--editorial-muted)]" : "text-white/75";
-
-  const chipClass =
-    tone === "light"
-      ? "bg-[rgba(228,225,237,0.44)] text-[var(--editorial-muted)]"
-      : "bg-white/10 text-white/80";
-
-  return (
-    <article
-      className={`${toneClass} flex min-h-[320px] flex-col rounded-[28px] p-8`}
-    >
-      <div className="flex items-center justify-between">
-        <span
-          className={`font-mono text-[11px] uppercase tracking-[0.24em] ${mutedText}`}
-        >
-          {index}
-        </span>
-        <ArrowRight className={`h-4 w-4 ${mutedText}`} />
-      </div>
-
-      <h3 className="mt-8 font-hanken text-3xl font-semibold leading-tight tracking-[-0.05em]">
-        {title}
-      </h3>
-      <p className={`mt-4 text-base leading-7 ${mutedText}`}>{description}</p>
-
-      <div className="mt-auto flex flex-wrap gap-2 pt-8">
-        {chips.map((chip) => (
-          <span
-            key={chip}
-            className={`rounded-full px-3 py-1 text-xs ${chipClass}`}
-          >
-            {chip}
-          </span>
-        ))}
-      </div>
-    </article>
   );
 }
 
@@ -497,7 +295,61 @@ function InterestCard({
   );
 }
 
+function ServiceCard({
+  title,
+  description,
+  points,
+  icon,
+  wide = false,
+}: (typeof capabilityCards)[number] & { wide?: boolean }) {
+  const Icon = icon;
+
+  return (
+    <article
+      className={`${wide ? "md:col-span-2" : ""} flex h-full min-h-[300px] flex-col rounded-[26px] border border-[rgba(119,117,134,0.12)] bg-white/58 p-6 md:p-7`}
+    >
+      <div className="flex items-start gap-4">
+        <div className="mt-0.5 flex h-12 w-12 shrink-0 items-center justify-center rounded-[18px] bg-[rgba(94,92,230,0.08)] text-[var(--editorial-primary)]">
+          <Icon className="h-5 w-5" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <h3 className="font-hanken text-xl font-semibold tracking-[-0.03em] text-[var(--editorial-foreground)] md:text-[1.45rem]">
+            {title}
+          </h3>
+          <p className="mt-3 max-w-xl text-base leading-8 text-[var(--editorial-muted)]">
+            {description}
+          </p>
+        </div>
+      </div>
+
+      <div className="mt-auto pt-6">
+        <div className="mb-5 h-px w-full bg-[rgba(94,92,230,0.12)]" />
+        <ul
+          className={`grid gap-3 ${
+            wide
+              ? "sm:grid-cols-3"
+              : "sm:grid-cols-1 lg:grid-cols-1 xl:grid-cols-1"
+          }`}
+        >
+          {points.map((point) => (
+            <li
+              key={point}
+              className="flex min-h-6 items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--editorial-muted)]"
+            >
+              <span className="h-1.5 w-1.5 rounded-full bg-[rgba(94,92,230,0.65)]" />
+              {point}
+            </li>
+          ))}
+        </ul>
+      </div>
+    </article>
+  );
+}
+
 export function HomePage() {
+  const primaryPathways = pathwayCards.filter((card) => !card.wide);
+  const socialPathway = pathwayCards.find((card) => card.wide);
+
   return (
     <PageScaffold active="Home">
       <main className="pb-20 pt-6 md:pt-8">
@@ -623,24 +475,85 @@ export function HomePage() {
             description="A cleaner navigation widget for the parts of the portfolio that deserve their own focused pages."
           />
 
-          <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
-            {pathwayCards.map((card) => (
-              <PathwayCard key={card.title} {...card} />
+          <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2">
+            {primaryPathways.map((card) => (
+              <PathwayLink key={card.title} {...card} />
             ))}
           </div>
+
+          {socialPathway ? (
+            <Link
+              href={socialPathway.href}
+              className="group mt-12 block border-y border-[rgba(119,117,134,0.12)] py-8"
+            >
+              <div className="grid gap-8 md:grid-cols-[1.2fr_0.9fr] md:items-end">
+                <div>
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
+                        {socialPathway.index}
+                      </p>
+                      <h3 className="mt-3 font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)] md:text-5xl">
+                        {socialPathway.title}
+                      </h3>
+                    </div>
+                    <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
+                  </div>
+
+                  <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
+                    {socialPathway.description}
+                  </p>
+                </div>
+
+                <div className="md:justify-self-end">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
+                    Digital presence
+                  </p>
+                  <div className="mt-4 flex max-w-md flex-wrap gap-2.5">
+                    {socialPathway.platforms?.map((platform) => (
+                      <span
+                        key={platform}
+                        className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(255,255,255,0.68)] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]"
+                      >
+                        {platform}
+                      </span>
+                    ))}
+                  </div>
+
+                  <div className="mt-6 flex items-center gap-3">
+                    <span className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.05)] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]">
+                      {socialPathway.badge}
+                    </span>
+                    <span className="h-px flex-1 bg-[rgba(94,92,230,0.14)]" />
+                    <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted)]">
+                      Open
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </Link>
+          ) : null}
         </SectionReveal>
 
         <SectionReveal className="section-shell section-block">
-          <SectionHeading
-            eyebrow="What I do"
-            title="Services and expertise."
-            description="A cleaner expression of the capabilities behind the projects, roles, and future case studies."
-          />
+          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
+            <div className="lg:col-span-4">
+              <SectionHeading
+                eyebrow="What I do"
+                title="Services and expertise."
+                description="A cleaner expression of the capabilities behind the projects, roles, and future case studies."
+              />
+            </div>
 
-          <div className="mt-10 grid grid-cols-1 gap-6 xl:grid-cols-3">
-            {capabilityCards.map((card) => (
-              <CapabilityCard key={card.title} {...card} />
-            ))}
+            <div className="grid auto-rows-fr grid-cols-1 items-stretch gap-8 lg:col-span-8 md:grid-cols-2">
+              {capabilityCards.map((card, index) => (
+                <ServiceCard
+                  key={card.title}
+                  {...card}
+                  wide={index === 2}
+                />
+              ))}
+            </div>
           </div>
         </SectionReveal>
 
@@ -717,52 +630,6 @@ export function HomePage() {
                 <SurfaceTag>Architecture</SurfaceTag>
                 <SurfaceTag>Product</SurfaceTag>
               </div>
-            </div>
-          </div>
-        </SectionReveal>
-
-        <SectionReveal className="section-shell section-block">
-          <div className="grid grid-cols-1 gap-10 lg:grid-cols-12">
-            <div className="lg:col-span-4">
-              <SectionHeading
-                eyebrow="Core expertise"
-                title="Foundations that scale beyond the landing page."
-                description="The new portfolio should feel like the outer layer of a broader software-builder system."
-              />
-            </div>
-
-            <div className="grid grid-cols-1 gap-8 lg:col-span-8 md:grid-cols-2">
-              {expertiseCards.map((group) => {
-                const Icon = group.icon;
-
-                return (
-                  <div
-                    key={group.title}
-                    className="rounded-[26px] border border-[rgba(119,117,134,0.12)] bg-white/58 p-6"
-                  >
-                    <div className="flex items-center gap-3">
-                      <Icon className="h-5 w-5 text-[var(--editorial-primary)]" />
-                      <h3 className="font-hanken text-xl font-semibold tracking-[-0.03em] text-[var(--editorial-foreground)]">
-                        {group.title}
-                      </h3>
-                    </div>
-                    <p className="mt-4 text-base leading-8 text-[var(--editorial-muted)]">
-                      {group.description}
-                    </p>
-                    <ul className="mt-5 space-y-3">
-                      {group.points.map((point) => (
-                        <li
-                          key={point}
-                          className="flex items-center gap-3 font-mono text-[11px] uppercase tracking-[0.18em] text-[var(--editorial-muted)]"
-                        >
-                          <span className="h-1.5 w-1.5 rounded-full bg-[rgba(94,92,230,0.65)]" />
-                          {point}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                );
-              })}
             </div>
           </div>
         </SectionReveal>
