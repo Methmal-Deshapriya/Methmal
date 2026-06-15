@@ -2,7 +2,16 @@ import { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://methmaldeshapriya.com";
-  const routes = ["", "/education", "/foundry", "/projects", "/blogs", "/connect"];
+  const routes = [
+    "",
+    "/education",
+    "/foundry",
+    "/projects",
+    "/blogs",
+    "/social",
+    "/xoxodevs",
+    "/connect",
+  ];
 
   return routes.map((route, index) => ({
     url: `${baseUrl}${route}`,

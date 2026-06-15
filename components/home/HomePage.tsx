@@ -31,32 +31,51 @@ const tickerItems = [
 
 const pathwayCards = [
   {
+    index: "01",
     title: "Projects",
     description:
-      "A scalable work system for selected builds, case studies, and technical depth.",
+      "Selected builds, case studies, and the software work that best represents how I think and execute.",
     href: "/projects",
     badge: "Selected work",
+    accent: "soft" as const,
   },
   {
+    index: "02",
     title: "Education",
     description:
-      "A narrative page for academic growth, milestones, and the foundation behind the builder.",
+      "The academic journey, learning milestones, and technical foundations behind the builder.",
     href: "/education",
     badge: "Background",
+    accent: "soft" as const,
   },
   {
+    index: "03",
     title: "Foundry Academy",
     description:
-      "A separate space for leadership, vision, execution, and the story of building Foundry.",
+      "A dedicated page for vision, execution, and the work of building Foundry Academy over time.",
     href: "/foundry",
-    badge: "Role page",
+    badge: "Venture",
+    accent: "dark" as const,
   },
   {
-    title: "Blogs",
+    index: "04",
+    title: "xoxodevs",
     description:
-      "A reading-first editorial surface for engineering notes, reflections, and ideas.",
-    href: "/blogs",
-    badge: "Writing",
+      "A focused page for the startup story, what we are building, and the direction behind xoxodevs.",
+    href: "/xoxodevs",
+    badge: "Startup",
+    accent: "primary" as const,
+  },
+  {
+    index: "05",
+    title: "Social",
+    description:
+      "A curated surface for social presence, public profiles, and the platforms where I share work, ideas, and updates.",
+    href: "/social",
+    badge: "Presence",
+    accent: "wide" as const,
+    wide: true,
+    platforms: ["LinkedIn", "GitHub", "Instagram", "Email"],
   },
 ] as const;
 
@@ -151,33 +170,170 @@ function SurfaceTag({ children }: { children: ReactNode }) {
 }
 
 function PathwayCard({
+  index,
   title,
   description,
   href,
   badge,
+  accent,
+  wide,
+  platforms,
 }: (typeof pathwayCards)[number]) {
+  const toneClass =
+    accent === "dark"
+      ? "bg-[linear-gradient(145deg,rgba(27,27,35,1),rgba(37,37,49,0.98))] text-white border-[rgba(255,255,255,0.06)]"
+      : accent === "primary"
+        ? "bg-[linear-gradient(145deg,rgba(94,92,230,0.96),rgba(123,112,255,0.92))] text-white border-[rgba(126,123,255,0.18)]"
+        : accent === "wide"
+          ? "bg-[linear-gradient(135deg,rgba(255,255,255,0.94),rgba(244,240,255,0.98))] text-[var(--editorial-foreground)] border-[rgba(119,117,134,0.12)]"
+          : "bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(248,246,255,0.98))] text-[var(--editorial-foreground)] border-[rgba(119,117,134,0.12)]";
+
+  const mutedClass =
+    accent === "soft" || accent === "wide"
+      ? "text-[var(--editorial-muted)]"
+      : "text-white/74";
+
+  const badgeClass =
+    accent === "soft" || accent === "wide"
+      ? "border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.06)] text-[var(--editorial-primary)]"
+      : "border-white/10 bg-white/8 text-white/76";
+
+  const lineClass =
+    accent === "soft" || accent === "wide"
+      ? "bg-[rgba(94,92,230,0.14)]"
+      : "bg-white/10";
+
+  const frameClass =
+    accent === "soft" || accent === "wide"
+      ? "border-[rgba(119,117,134,0.12)] bg-[rgba(255,255,255,0.58)]"
+      : "border-white/10 bg-white/5";
+
+  const cornerClass =
+    accent === "soft" || accent === "wide"
+      ? "border-[rgba(94,92,230,0.22)]"
+      : "border-white/14";
+
   return (
     <Link
       href={href}
-      className="editorial-panel group flex h-full min-h-[260px] flex-col justify-between transition-all duration-300 hover:-translate-y-1 hover:border-[rgba(94,92,230,0.22)] hover:shadow-[0_18px_42px_rgba(27,27,35,0.05)]"
+      className={`${toneClass} ${wide ? "md:col-span-2" : ""} group relative flex min-h-[260px] h-full flex-col overflow-hidden rounded-[30px] border p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7`}
     >
-      <div>
-        <SurfaceTag>{badge}</SurfaceTag>
-        <h3 className="mt-5 font-hanken text-2xl font-semibold tracking-[-0.04em] text-[var(--editorial-foreground)]">
-          {title}
-        </h3>
-        <p className="mt-3 max-w-md text-base leading-7 text-[var(--editorial-muted)]">
-          {description}
-        </p>
+      <div className="pointer-events-none absolute inset-0">
+        <div
+          className={`absolute -right-10 top-0 h-28 w-28 rounded-full blur-3xl ${
+            accent === "primary"
+              ? "bg-white/12"
+              : accent === "dark"
+                ? "bg-[rgba(94,92,230,0.18)]"
+                : "bg-[rgba(94,92,230,0.12)]"
+          }`}
+        />
+        <div
+          className={`absolute bottom-6 right-6 h-12 w-16 border-b border-r ${
+            accent === "soft" || accent === "wide" ? cornerClass : "border-white/10"
+          }`}
+        />
+        <div
+          className={`absolute left-0 top-0 h-full w-1 ${
+            accent === "primary"
+              ? "bg-white/22"
+              : accent === "dark"
+                ? "bg-[rgba(94,92,230,0.55)]"
+                : "bg-[rgba(94,92,230,0.65)]"
+          }`}
+        />
       </div>
 
-      <div className="mt-8 flex items-end justify-between gap-6">
-        <div className="relative h-20 flex-1 overflow-hidden rounded-2xl border border-[rgba(119,117,134,0.12)] bg-[rgba(255,255,255,0.58)]">
-          <div className="absolute inset-0 dot-grid opacity-75" />
-          <div className="absolute bottom-0 left-5 h-10 w-14 border-r border-t border-[rgba(94,92,230,0.22)]" />
-          <div className="absolute right-5 top-5 h-6 w-10 border-b border-l border-[rgba(119,117,134,0.18)]" />
+      <div className="relative flex h-full flex-col">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <p className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}>
+              {index}
+            </p>
+            <h3 className="mt-3 font-hanken text-2xl font-semibold tracking-[-0.04em] md:text-[2rem]">
+              {title}
+            </h3>
+          </div>
+          <span
+            className={`rounded-full border px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] ${badgeClass}`}
+          >
+            {badge}
+          </span>
         </div>
-        <ArrowUpRight className="h-5 w-5 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
+
+        <p
+          className={`mt-4 text-base leading-7 ${mutedClass} ${
+            wide ? "max-w-3xl" : "max-w-md"
+          }`}
+        >
+          {description}
+        </p>
+
+        <div className="mt-auto pt-8">
+          {wide ? (
+            <div className="grid gap-5 md:grid-cols-[1.35fr_0.9fr] md:items-end">
+              <div
+                className={`relative overflow-hidden rounded-[24px] border ${frameClass} px-5 py-5 md:px-6`}
+              >
+                <div className="absolute inset-0 dot-grid opacity-75" />
+                <div className={`absolute left-6 top-0 h-12 w-16 border-l border-b ${cornerClass}`} />
+                <div className={`absolute bottom-0 right-6 h-10 w-14 border-r border-t ${cornerClass}`} />
+
+                <div className="relative">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
+                    Digital presence
+                  </p>
+                  <div className="mt-4 flex flex-wrap gap-2.5">
+                    {platforms?.map((platform) => (
+                      <span
+                        key={platform}
+                        className="rounded-full border border-[rgba(94,92,230,0.12)] bg-white/72 px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]"
+                      >
+                        {platform}
+                      </span>
+                    ))}
+                  </div>
+                </div>
+              </div>
+
+              <div className="flex items-end justify-between gap-6 md:justify-end">
+                <div className="flex flex-col items-start gap-2">
+                  <span className={`h-px w-16 ${lineClass}`} />
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted)]">
+                    Profiles & updates
+                  </p>
+                </div>
+                <ArrowUpRight className="h-5 w-5 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
+              </div>
+            </div>
+          ) : (
+            <div className="flex items-end justify-between gap-6">
+              <div
+                className={`relative h-20 flex-1 overflow-hidden rounded-[22px] border ${frameClass}`}
+              >
+                <div className="absolute inset-0 dot-grid opacity-75" />
+                <div className={`absolute bottom-0 left-5 h-10 w-14 border-r border-t ${cornerClass}`} />
+                <div
+                  className={`absolute right-5 top-5 h-6 w-10 border-b border-l ${
+                    accent === "soft" || accent === "wide"
+                      ? "border-[rgba(119,117,134,0.18)]"
+                      : "border-white/12"
+                  }`}
+                />
+              </div>
+              <div className="flex flex-col items-end gap-3">
+                <span className={`h-px w-14 ${lineClass}`} />
+                <ArrowUpRight
+                  className={`h-5 w-5 shrink-0 transition-colors duration-300 ${
+                    accent === "soft" || accent === "wide"
+                      ? "text-[var(--editorial-muted)] group-hover:text-[var(--editorial-primary)]"
+                      : "text-white/62 group-hover:text-white"
+                  }`}
+                />
+              </div>
+            </div>
+          )}
+        </div>
       </div>
     </Link>
   );
@@ -462,9 +618,9 @@ export function HomePage() {
 
         <SectionReveal className="section-shell section-block">
           <SectionHeading
-            eyebrow="Homepage pathways"
-            title="A homepage that opens into deeper pages."
-            description="The homepage now previews the portfolio system instead of trying to hold every story in one long landing page."
+            eyebrow="Explore further"
+            title="Dedicated spaces for the work, ideas, and ventures behind the portfolio."
+            description="A cleaner navigation widget for the parts of the portfolio that deserve their own focused pages."
           />
 
           <div className="mt-10 grid grid-cols-1 gap-6 md:grid-cols-2">
@@ -616,7 +772,7 @@ export function HomePage() {
             <SectionHeading
               eyebrow="Next step"
               title="Building a sharper multi-page portfolio system."
-              description="The homepage is now cleaner and more balanced. The next layer is turning Education, Foundry, Projects, and Blogs into fully designed pages."
+              description="The homepage is now cleaner and more balanced. The next layer is turning Projects, Education, Foundry Academy, xoxodevs, and Social into fully designed dedicated pages."
               action={
                 <div className="hidden md:block">
                   <SurfaceTag>Homepage refined</SurfaceTag>
