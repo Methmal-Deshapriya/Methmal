@@ -3,6 +3,8 @@ import { Geist, Geist_Mono, Hanken_Grotesk, Inter } from "next/font/google";
 
 import "./globals.css";
 
+import { WelcomeOverlay } from "@/components/site/WelcomeOverlay";
+
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
@@ -99,6 +101,7 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} ${hankenGrotesk.variable} ${inter.variable} antialiased`}
       >
+        <WelcomeOverlay />
         {children}
       </body>
     </html>

@@ -97,11 +97,7 @@ const capabilityCards = [
     title: "Frontend Engineering",
     description:
       "Crafting interfaces that feel intentional in spacing, interaction, hierarchy, and performance.",
-    points: [
-      "Next.js",
-      "UI systems",
-      "Performance",
-    ],
+    points: ["Next.js", "UI systems", "Performance"],
     icon: Sparkles,
   },
 ] as const;
@@ -209,9 +205,7 @@ function InterestCard({
         : "bg-[linear-gradient(145deg,rgba(255,255,255,0.92),rgba(244,240,255,0.96))] text-[var(--editorial-foreground)] border-[rgba(119,117,134,0.12)]";
 
   const mutedClass =
-    accent === "soft"
-      ? "text-[var(--editorial-muted)]"
-      : "text-white/72";
+    accent === "soft" ? "text-[var(--editorial-muted)]" : "text-white/72";
 
   const badgeClass =
     accent === "soft"
@@ -230,14 +224,14 @@ function InterestCard({
       <div className="pointer-events-none absolute inset-0">
         <div
           className={`absolute -right-10 top-0 h-28 w-28 rounded-full blur-3xl ${
-            accent === "soft"
-              ? "bg-[rgba(94,92,230,0.12)]"
-              : "bg-white/10"
+            accent === "soft" ? "bg-[rgba(94,92,230,0.12)]" : "bg-white/10"
           }`}
         />
         <div
           className={`absolute bottom-5 right-5 h-12 w-16 border-b border-r ${
-            accent === "soft" ? "border-[rgba(94,92,230,0.12)]" : "border-white/10"
+            accent === "soft"
+              ? "border-[rgba(94,92,230,0.12)]"
+              : "border-white/10"
           }`}
         />
         <div
@@ -260,7 +254,9 @@ function InterestCard({
               <Icon className="h-5 w-5" />
             </div>
             <div>
-              <p className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}>
+              <p
+                className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}
+              >
                 {index}
               </p>
               <h3 className="mt-2 font-hanken text-2xl font-semibold tracking-[-0.04em]">
@@ -276,7 +272,9 @@ function InterestCard({
           </span>
         </div>
 
-        <p className={`mt-5 max-w-md text-sm leading-7 md:text-[15px] ${mutedClass}`}>
+        <p
+          className={`mt-5 max-w-md text-sm leading-7 md:text-[15px] ${mutedClass}`}
+        >
           {description}
         </p>
 
@@ -286,7 +284,9 @@ function InterestCard({
               accent === "soft" ? "bg-[rgba(94,92,230,0.14)]" : "bg-white/10"
             }`}
           />
-          <span className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}>
+          <span
+            className={`font-mono text-[10px] uppercase tracking-[0.22em] ${mutedClass}`}
+          >
             Interested
           </span>
         </div>
@@ -401,7 +401,7 @@ export function HomePage() {
           </div>
         </SectionReveal>
 
-        <SectionReveal className="mb-20 border-y border-[rgba(119,117,134,0.1)] bg-white/35 py-4 md:mb-28">
+        <section className="mb-20 border-y border-[rgba(119,117,134,0.1)] bg-white/35 py-4 md:mb-28">
           <div className="ticker-wrap">
             <div className="ticker-track font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--editorial-muted)]">
               {Array.from({ length: 3 }).map((_, groupIndex) => (
@@ -419,7 +419,7 @@ export function HomePage() {
               ))}
             </div>
           </div>
-        </SectionReveal>
+        </section>
 
         <SectionReveal className="section-shell section-block">
           <div className="grid grid-cols-1 gap-6 lg:grid-cols-12">
@@ -543,15 +543,20 @@ export function HomePage() {
                 title="Services and expertise."
                 description="A cleaner expression of the capabilities behind the projects, roles, and future case studies."
               />
+              <div className="mt-10 hidden overflow-hidden rounded-2xl lg:block">
+                <Image
+                  src="/methmal.png"
+                  alt="Methmal Deshapriya"
+                  width={480}
+                  height={560}
+                  className="h-auto w-full"
+                />
+              </div>
             </div>
 
             <div className="grid auto-rows-fr grid-cols-1 items-stretch gap-8 lg:col-span-8 md:grid-cols-2">
               {capabilityCards.map((card, index) => (
-                <ServiceCard
-                  key={card.title}
-                  {...card}
-                  wide={index === 2}
-                />
+                <ServiceCard key={card.title} {...card} wide={index === 2} />
               ))}
             </div>
           </div>
