@@ -9,14 +9,24 @@ import {
   Sparkles,
 } from "lucide-react";
 
+import { ContactForm } from "@/components/site/ContactForm";
 import { PageScaffold } from "@/components/site/PageScaffold";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { SectionReveal } from "@/components/site/SectionReveal";
 
-const roleItems = [
-  "Software engineer intern at OleeAI LLC",
-  "ceo of Foundry academy",
-  "co-founder of xoxodevs",
+const ventures = [
+  {
+    role: "Co-Founder",
+    venture: "Foundry Academy",
+    description:
+      "Designing a structured path for developers who want to close the gap between studying and actually shipping software.",
+  },
+  {
+    role: "Founder",
+    venture: "xoxodevs",
+    description:
+      "A startup building developer-first tools and products — moving fast while staying close to what genuinely matters.",
+  },
 ] as const;
 
 const tickerItems = [
@@ -219,7 +229,7 @@ function InterestCard({
 
   return (
     <article
-      className={`${toneClass} group relative overflow-hidden rounded-[28px] border p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7`}
+      className={`${toneClass} group relative overflow-hidden rounded-xl border p-6 transition-transform duration-300 hover:-translate-y-1 md:p-7`}
     >
       <div className="pointer-events-none absolute inset-0">
         <div
@@ -438,7 +448,7 @@ export function HomePage() {
               </p>
 
               <div className="mt-8 grid gap-4 md:grid-cols-2">
-                <div className="rounded-2xl border border-[rgba(119,117,134,0.12)] bg-white/60 p-5">
+                <div className="rounded-lg border border-[rgba(119,117,134,0.12)] bg-white/60 p-5">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--editorial-muted-soft)]">
                     Location
                   </p>
@@ -447,7 +457,7 @@ export function HomePage() {
                     and ambitious digital products.
                   </p>
                 </div>
-                <div className="rounded-2xl border border-[rgba(119,117,134,0.12)] bg-white/60 p-5">
+                <div className="rounded-lg border border-[rgba(119,117,134,0.12)] bg-white/60 p-5">
                   <p className="font-mono text-[10px] uppercase tracking-[0.2em] text-[var(--editorial-muted-soft)]">
                     Current focus
                   </p>
@@ -570,47 +580,50 @@ export function HomePage() {
           />
 
           <div className="mt-10 grid grid-cols-1 gap-6 lg:grid-cols-12">
-            <div className="rounded-[30px] bg-[var(--editorial-foreground)] p-8 text-white md:p-10 lg:col-span-8">
-              <div className="mb-10 flex items-center justify-between gap-4">
-                <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/45">
-                  Role timeline
-                </span>
-                <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/60">
-                  3 current anchors
+            <div className="rounded-xl bg-[var(--editorial-foreground)] p-8 text-white md:p-10 lg:col-span-8">
+              {/* Primary role — shown at the top as the main identity */}
+              <div className="mb-8 flex items-start justify-between gap-4">
+                <div>
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
+                    Current role
+                  </p>
+                  <h3 className="mt-3 font-hanken text-3xl font-semibold tracking-[-0.04em] md:text-4xl">
+                    Software Engineer
+                  </h3>
+                  <p className="mt-1.5 font-hanken text-xl tracking-[-0.02em] text-white/55 md:text-2xl">
+                    Olee AI
+                  </p>
+                </div>
+                <span className="shrink-0 rounded-full bg-[rgba(94,92,230,0.2)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary-soft)]">
+                  Active
                 </span>
               </div>
 
-              <div className="space-y-8 border-l border-white/10 pl-6 md:pl-8">
-                {roleItems.map((role, index) => (
-                  <div key={role} className="relative">
-                    <span
-                      className={`absolute -left-[28px] top-2.5 h-2.5 w-2.5 rounded-full ${
-                        index === 0
-                          ? "bg-[var(--editorial-primary)]"
-                          : "bg-white/35"
-                      }`}
-                    />
-                    <div className="flex flex-col gap-3 md:flex-row md:items-start md:justify-between">
-                      <div>
-                        <h3 className="font-hanken text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                          {role}
-                        </h3>
-                        <p className="mt-2 max-w-2xl text-sm leading-7 text-white/58">
-                          {index === 0
-                            ? "The main professional identity on the site right now."
-                            : index === 1
-                              ? "A dedicated page will carry the fuller founder and operator story."
-                              : "A supporting role within the broader builder narrative."}
-                        </p>
-                      </div>
-                      {index === 0 ? (
-                        <span className="w-fit rounded-full bg-[rgba(94,92,230,0.2)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary-soft)]">
-                          Current focus
-                        </span>
-                      ) : null}
+              {/* Ventures — concurrent, beneath the primary role */}
+              <div className="border-t border-white/10 pt-8">
+                <div className="mb-7 flex items-center justify-between gap-4">
+                  <span className="font-mono text-[11px] uppercase tracking-[0.24em] text-white/45">
+                    Also building
+                  </span>
+                  <span className="rounded-full border border-white/10 px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-white/60">
+                    2 concurrent
+                  </span>
+                </div>
+                <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+                  {ventures.map((item) => (
+                    <div key={item.venture}>
+                      <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
+                        {item.role}
+                      </p>
+                      <h3 className="mt-2.5 font-hanken text-xl font-semibold tracking-[-0.03em] md:text-2xl">
+                        {item.venture}
+                      </h3>
+                      <p className="mt-2.5 text-sm leading-7 text-white/52">
+                        {item.description}
+                      </p>
                     </div>
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
 
@@ -620,19 +633,19 @@ export function HomePage() {
                   Focus areas
                 </p>
                 <h3 className="mt-5 font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)]">
-                  Building the future with{" "}
-                  <span className="text-[var(--editorial-primary)]">AI</span>{" "}
-                  and engineering discipline.
+                  Product engineering paired with{" "}
+                  <span className="text-[var(--editorial-primary)]">founder</span>{" "}
+                  thinking.
                 </h3>
                 <p className="mt-5 text-base leading-8 text-[var(--editorial-muted)]">
-                  Stronger systems, cleaner interfaces, and product work that
-                  feels modern without becoming gimmicky.
+                  From backend foundations to polished interfaces — building software that holds up and ventures that ship.
                 </p>
               </div>
 
               <div className="mt-8 flex flex-wrap gap-2">
-                <SurfaceTag>AI systems</SurfaceTag>
-                <SurfaceTag>Architecture</SurfaceTag>
+                <SurfaceTag>Full-stack</SurfaceTag>
+                <SurfaceTag>AI-aware</SurfaceTag>
+                <SurfaceTag>Systems</SurfaceTag>
                 <SurfaceTag>Product</SurfaceTag>
               </div>
             </div>
@@ -640,25 +653,40 @@ export function HomePage() {
         </SectionReveal>
 
         <SectionReveal className="section-shell pb-6">
-          <div className="editorial-panel-strong rounded-[32px] border border-[rgba(119,117,134,0.12)] bg-[linear-gradient(135deg,rgba(255,255,255,0.9),rgba(244,240,255,0.96))] px-6 py-10 md:px-10 md:py-14">
-            <SectionHeading
-              eyebrow="Next step"
-              title="Building a sharper multi-page portfolio system."
-              description="The homepage is now cleaner and more balanced. The next layer is turning Projects, Education, Foundry Academy, xoxodevs, and Social into fully designed dedicated pages."
-              action={
-                <div className="hidden md:block">
-                  <SurfaceTag>Homepage refined</SurfaceTag>
-                </div>
-              }
-            />
+          <div className="border-t border-[rgba(119,117,134,0.12)] pt-12 md:pt-16">
+            <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
 
-            <div className="mt-8 flex flex-wrap gap-4">
-              <Link href="/connect" className="editorial-button-primary">
-                Start a conversation
-              </Link>
-              <Link href="/foundry" className="editorial-button-secondary">
-                Explore Foundry Academy
-              </Link>
+              {/* Left — heading + contact details */}
+              <div>
+                <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
+                  Get in touch
+                </p>
+                <h2 className="mt-4 font-hanken text-4xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)] md:text-5xl">
+                  Let&apos;s start a<br />conversation.
+                </h2>
+                <p className="mt-5 max-w-sm text-base leading-8 text-[var(--editorial-muted)]">
+                  Whether it&apos;s a project, a role, or just something
+                  interesting — reach out and I&apos;ll get back to you.
+                </p>
+
+                <div className="mt-8 space-y-3 border-t border-[rgba(119,117,134,0.1)] pt-8">
+                  <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
+                    Direct email
+                  </p>
+                  <a
+                    href="mailto:methmaldeshapriya2002@gmail.com"
+                    className="block text-sm text-[var(--editorial-foreground)] underline-offset-4 transition-colors hover:text-[var(--editorial-primary)] hover:underline"
+                  >
+                    methmaldeshapriya2002@gmail.com
+                  </a>
+                </div>
+              </div>
+
+              {/* Right — form */}
+              <div>
+                <ContactForm />
+              </div>
+
             </div>
           </div>
         </SectionReveal>

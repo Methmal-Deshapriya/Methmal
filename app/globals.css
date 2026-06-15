@@ -168,7 +168,7 @@
   .editorial-panel {
     background: var(--editorial-surface);
     border: 1px solid var(--editorial-stroke);
-    border-radius: 1.5rem;
+    border-radius: 0.75rem;
     backdrop-filter: blur(16px);
     -webkit-backdrop-filter: blur(16px);
     box-shadow: 0 14px 38px rgba(27, 27, 35, 0.035);
