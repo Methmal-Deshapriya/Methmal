@@ -38,7 +38,18 @@ const tickerItems = [
   "backend architecture",
 ] as const;
 
-const pathwayCards = [
+type PathwayCard = {
+  index: string;
+  title: string;
+  description: string;
+  href: string;
+  badge: string;
+  accent: "soft" | "dark" | "primary" | "wide";
+  wide?: boolean;
+  platforms?: readonly string[];
+};
+
+const pathwayCards: readonly PathwayCard[] = [
   {
     index: "01",
     title: "Projects",
@@ -46,7 +57,7 @@ const pathwayCards = [
       "Selected builds, case studies, and the software work that best represents how I think and execute.",
     href: "/projects",
     badge: "Selected work",
-    accent: "soft" as const,
+    accent: "soft",
   },
   {
     index: "02",
@@ -55,7 +66,7 @@ const pathwayCards = [
       "The academic journey, learning milestones, and technical foundations behind the builder.",
     href: "/education",
     badge: "Background",
-    accent: "soft" as const,
+    accent: "soft",
   },
   {
     index: "03",
@@ -64,7 +75,7 @@ const pathwayCards = [
       "A dedicated page for vision, execution, and the work of building Foundry Academy over time.",
     href: "/foundry",
     badge: "Venture",
-    accent: "dark" as const,
+    accent: "dark",
   },
   {
     index: "04",
@@ -73,7 +84,7 @@ const pathwayCards = [
       "A focused page for the startup story, what we are building, and the direction behind xoxodevs.",
     href: "/xoxodevs",
     badge: "Startup",
-    accent: "primary" as const,
+    accent: "primary",
   },
   {
     index: "05",
@@ -82,11 +93,11 @@ const pathwayCards = [
       "A curated surface for social presence, public profiles, and the platforms where I share work, ideas, and updates.",
     href: "/social",
     badge: "Presence",
-    accent: "wide" as const,
+    accent: "wide",
     wide: true,
     platforms: ["LinkedIn", "GitHub", "Instagram", "Email"],
   },
-] as const;
+];
 
 const capabilityCards = [
   {
@@ -156,7 +167,7 @@ function PathwayLink({
   description,
   href,
   badge,
-}: (typeof pathwayCards)[number]) {
+}: PathwayCard) {
   return (
     <Link
       href={href}
