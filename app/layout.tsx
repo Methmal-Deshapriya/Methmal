@@ -1,17 +1,58 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Funnel_Sans, Inter } from "next/font/google";
+import { Geist_Mono, Hanken_Grotesk, Inter } from "next/font/google";
+
 import "./globals.css";
-import { ThemeProvider } from "./provider";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+import { WelcomeOverlay } from "@/components/site/WelcomeOverlay";
 
-const funnelSans = Funnel_Sans({
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://methmaldeshapriya.com/#website",
+      url: "https://methmaldeshapriya.com",
+      name: "Methmal Deshapriya",
+      description:
+        "The personal portfolio of Methmal Deshapriya, focused on software engineering, AI-aware systems, and founder-led product building.",
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": "https://methmaldeshapriya.com/#person",
+      name: "Methmal Deshapriya",
+      jobTitle: "Software Builder",
+      url: "https://methmaldeshapriya.com",
+      sameAs: [
+        "https://www.linkedin.com/in/methmal-deshapriya",
+        "https://github.com/Methmal-Deshapriya",
+        "https://www.instagram.com/__methmal__?igsh=eXdweHE3cmdlbzI5",
+      ],
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://methmaldeshapriya.com/#profile",
+      url: "https://methmaldeshapriya.com",
+      name: "Methmal Deshapriya | Software Builder",
+      description:
+        "A premium portfolio for Methmal Deshapriya focused on software engineering, systems thinking, AI-aware product building, and founder-led execution.",
+      isPartOf: {
+        "@id": "https://methmaldeshapriya.com/#website",
+      },
+      about: {
+        "@id": "https://methmaldeshapriya.com/#person",
+      },
+      mainEntity: {
+        "@id": "https://methmaldeshapriya.com/#person",
+      },
+    },
+  ],
+};
+
+const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "700"], // pick the weights you need
-  variable: "--font-funnel-sans", // CSS variable name
+  weight: ["400", "500", "600", "700"],
+  variable: "--font-hanken-grotesk",
 });
 
 const inter = Inter({
@@ -26,9 +67,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Methmal Deshapriya | AI & Full-Stack Developer",
+  title: "Methmal Deshapriya | Software Builder",
   description:
-    "Explore Methmal Deshapriya’s portfolio — showcasing projects in AI, web development, and creative technology. Built with Next.js, Tailwind CSS, and cutting-edge design.",
+    "A premium portfolio for Methmal Deshapriya focused on software engineering, systems thinking, AI-aware product building, and founder-led execution.",
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -37,11 +78,11 @@ export const metadata: Metadata = {
   keywords: [
     "Methmal",
     "Methmal Deshapriya",
-    "AI Developer",
-    "Full Stack Developer",
-    "Next.js Portfolio",
-    "Machine Learning Projects",
-    "React Developer Sri Lanka",
+    "Software Builder",
+    "Software Engineer Intern",
+    "Portfolio Website",
+    "AI Product Builder",
+    "React Developer",
     "Software Engineer Portfolio",
   ],
   authors: [
@@ -49,9 +90,9 @@ export const metadata: Metadata = {
   ],
   metadataBase: new URL("https://methmaldeshapriya.com"),
   openGraph: {
-    title: "Methmal Deshapriya | AI & Full-Stack Developer",
+    title: "Methmal Deshapriya | Software Builder",
     description:
-      "Discover Methmal Deshapriya’s portfolio featuring innovative AI and web development projects.",
+      "Explore Methmal Deshapriya's work across software engineering, AI-aware systems, and founder-led product building.",
     url: "https://methmaldeshapriya.com",
     siteName: "Methmal Deshapriya",
     images: [
@@ -67,25 +108,11 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Methmal Deshapriya | Developer Portfolio",
+    title: "Methmal Deshapriya | Software Builder",
     description:
-      "AI, Web Development, and Software Engineering projects by Methmal Deshapriya.",
+      "Software engineering, systems thinking, AI-aware products, and modern web craftsmanship by Methmal Deshapriya.",
     images: ["/og-image.png"],
     creator: "@methmaldeshapriya",
-  },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Methmal Deshapriya",
-      jobTitle: "AI & Full Stack Developer",
-      url: "https://methmaldeshapriya.com",
-      sameAs: [
-        "https://www.linkedin.com/in/methmal-deshapriya",
-        "https://github.com/Methmal-Deshapriya",
-        "https://www.instagram.com/__methmal__?igsh=eXdweHE3cmdlbzI5",
-      ],
-    }),
   },
 };
 
@@ -96,17 +123,19 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${funnelSans.variable} antialiased`}
+        className={`${geistMono.variable} ${hankenGrotesk.variable} ${inter.variable} antialiased`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="dark"
-          enableSystem
-          disableTransitionOnChange
-        >
-          {children}
-        </ThemeProvider>
+        <WelcomeOverlay />
+        {children}
       </body>
     </html>
   );
