@@ -17,11 +17,11 @@ export function SiteFooter() {
               MethmalDeshapriya
             </div>
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--editorial-primary)]">
-              Software builder portfolio
+              Software builder
             </p>
             <p className="text-sm leading-7 text-[var(--editorial-muted)] md:text-base">
-              A calmer, multi-page portfolio system centered on software
-              engineering, AI-aware product building, and founder-led execution.
+              I build software, teach technology, and explore AI-driven ideas
+              with a focus on clarity, usefulness, and real-world impact.
             </p>
           </div>
 
@@ -42,8 +42,8 @@ export function SiteFooter() {
 
         <div className="flex flex-col gap-3 border-t border-[rgba(119,117,134,0.1)] pt-6 text-sm text-[var(--editorial-muted)] md:flex-row md:items-center md:justify-between">
           <p>
-            A software builder portfolio focused on engineering clarity and
-            systems thinking.
+            Built around real projects, clear thinking, and practical digital
+            experiences.
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.24em]">
             Copyright 2026 Methmal Deshapriya

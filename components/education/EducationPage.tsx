@@ -30,11 +30,11 @@ const academicHighlights = [
   },
   {
     label: "Stream",
-    value: "Technology",
+    value: "Tech",
   },
   {
     label: "Z-score",
-    value: "2.431",
+    value: "2.9294",
   },
 ] as const;
 
@@ -368,10 +368,16 @@ export function EducationPage() {
             </h2>
 
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/projects" className="editorial-button-primary min-w-52">
+              <Link
+                href="/projects"
+                className="editorial-button-primary min-w-52"
+              >
                 View selected projects
               </Link>
-              <Link href="/connect" className="editorial-button-secondary min-w-52">
+              <Link
+                href="/connect"
+                className="editorial-button-secondary min-w-52"
+              >
                 Connect with me
               </Link>
             </div>

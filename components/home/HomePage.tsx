@@ -18,12 +18,14 @@ const ventures = [
   {
     role: "Co-Founder",
     venture: "Foundry Academy",
+    href: "https://foundryacademy.lk",
     description:
       "Designing a structured path for developers who want to close the gap between studying and actually shipping software.",
   },
   {
     role: "Founder",
     venture: "xoxodevs",
+    href: "https://xoxodevs.vercel.app/",
     description:
       "A startup building developer-first tools and products — moving fast while staying close to what genuinely matters.",
   },
@@ -161,13 +163,7 @@ function SurfaceTag({ children }: { children: ReactNode }) {
   );
 }
 
-function PathwayLink({
-  index,
-  title,
-  description,
-  href,
-  badge,
-}: PathwayCard) {
+function PathwayLink({ index, title, description, href, badge }: PathwayCard) {
   return (
     <Link
       href={href}
@@ -393,8 +389,9 @@ export function HomePage() {
               </h1>
 
               <p className="mt-8 max-w-2xl border-l border-[rgba(119,117,134,0.22)] pl-6 text-lg leading-8 text-[var(--editorial-muted)]">
-                A premium, multi-page portfolio centered on modern software
-                systems, product-minded execution, and AI-aware engineering.
+                I design and build modern software experiences with a focus on
+                clean interfaces, reliable systems, AI-enabled workflows, and
+                real-world product execution.
               </p>
 
               <div className="mt-10 flex flex-wrap gap-4">
@@ -492,8 +489,9 @@ export function HomePage() {
         <SectionReveal className="section-shell section-block">
           <SectionHeading
             eyebrow="Explore further"
-            title="Dedicated spaces for the work, ideas, and ventures behind the portfolio."
-            description="A cleaner navigation widget for the parts of the portfolio that deserve their own focused pages."
+            title="A focused look at the projects, lessons, ideas, and ventures I’m building."
+            description="Bringing together my work in software engineering, AI-powered projects, teaching, Foundry Academy, and technical writing.
+"
           />
 
           <div className="mt-10 grid grid-cols-1 gap-x-10 gap-y-8 md:grid-cols-2">
@@ -626,9 +624,14 @@ export function HomePage() {
                       <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-white/38">
                         {item.role}
                       </p>
-                      <h3 className="mt-2.5 font-hanken text-xl font-semibold tracking-[-0.03em] md:text-2xl">
+                      <Link
+                        href={item.href}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="mt-2.5 block font-hanken text-xl font-semibold tracking-[-0.03em] transition-opacity hover:opacity-70 md:text-2xl"
+                      >
                         {item.venture}
-                      </h3>
+                      </Link>
                       <p className="mt-2.5 text-sm leading-7 text-white/52">
                         {item.description}
                       </p>
@@ -645,11 +648,14 @@ export function HomePage() {
                 </p>
                 <h3 className="mt-5 font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)]">
                   Product engineering paired with{" "}
-                  <span className="text-[var(--editorial-primary)]">founder</span>{" "}
+                  <span className="text-[var(--editorial-primary)]">
+                    founder
+                  </span>{" "}
                   thinking.
                 </h3>
                 <p className="mt-5 text-base leading-8 text-[var(--editorial-muted)]">
-                  From backend foundations to polished interfaces — building software that holds up and ventures that ship.
+                  From backend foundations to polished interfaces — building
+                  software that holds up and ventures that ship.
                 </p>
               </div>
 
@@ -666,14 +672,14 @@ export function HomePage() {
         <SectionReveal className="section-shell pb-6">
           <div className="border-t border-[rgba(119,117,134,0.12)] pt-12 md:pt-16">
             <div className="grid grid-cols-1 gap-12 lg:grid-cols-2 lg:gap-20">
-
               {/* Left — heading + contact details */}
               <div>
                 <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
                   Get in touch
                 </p>
                 <h2 className="mt-4 font-hanken text-4xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)] md:text-5xl">
-                  Let&apos;s start a<br />conversation.
+                  Let&apos;s start a<br />
+                  conversation.
                 </h2>
                 <p className="mt-5 max-w-sm text-base leading-8 text-[var(--editorial-muted)]">
                   Whether it&apos;s a project, a role, or just something
@@ -697,7 +703,6 @@ export function HomePage() {
               <div>
                 <ContactForm />
               </div>
-
             </div>
           </div>
         </SectionReveal>
