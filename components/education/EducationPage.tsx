@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   BookOpenCheck,
   BrainCircuit,
@@ -182,7 +182,7 @@ function FocusCard({ label, title, icon: Icon }: FocusCardProps) {
 export function EducationPage() {
   return (
     <PageScaffold active="Education">
-      <main className="pb-8 pt-28 md:pt-32">
+      <main className="pb-8 pt-10 md:pt-14">
         <SectionReveal className="section-shell section-block relative overflow-hidden">
           <div className="pointer-events-none absolute left-0 top-8 h-40 w-40 rounded-full bg-[rgba(94,92,230,0.12)] blur-3xl" />
           <div className="pointer-events-none absolute right-10 top-10 h-48 w-48 rounded-full bg-[rgba(154,146,255,0.12)] blur-3xl" />
@@ -387,3 +387,5 @@ export function EducationPage() {
     </PageScaffold>
   );
 }
+
+

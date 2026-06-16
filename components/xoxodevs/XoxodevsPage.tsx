@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   ArrowUpRight,
   BrainCircuit,
@@ -12,13 +12,13 @@ import {
 import { PageScaffold } from "@/components/site/PageScaffold";
 import { SectionReveal } from "@/components/site/SectionReveal";
 
-// ── Constants ─────────────────────────────────────────────────────────────────
+// â”€â”€ Constants â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 // TODO: Confirm GitHub org URL once the org is publicly set up
 const GITHUB_ORG_URL = "https://github.com/xoxodevs";
 const WEBSITE_URL = "https://xoxodevs.vercel.app/";
 
-// ── Data ──────────────────────────────────────────────────────────────────────
+// â”€â”€ Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const studioFocusItems = [
   "Full-stack software solutions",
@@ -105,7 +105,7 @@ type XoxodevsProject = {
   live: boolean;
 };
 
-// Add future projects to this array — no code changes needed elsewhere.
+// Add future projects to this array â€” no code changes needed elsewhere.
 const xoxodevsProjects: readonly XoxodevsProject[] = [
   {
     index: "01",
@@ -161,7 +161,7 @@ const philosophy = [
   },
 ] as const;
 
-// ── Sub-components ────────────────────────────────────────────────────────────
+// â”€â”€ Sub-components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function SectionMarker({ index }: { index: string }) {
   return (
@@ -241,14 +241,14 @@ function StudioProjectCard({ project }: { project: XoxodevsProject }) {
   );
 }
 
-// ── Page ──────────────────────────────────────────────────────────────────────
+// â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function XoxodevsPage() {
   return (
     <PageScaffold active="xoxodevs">
-      <main className="pb-8 pt-28 md:pt-32">
+      <main className="pb-8 pt-10 md:pt-14">
 
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block relative overflow-hidden">
           <div className="pointer-events-none absolute -right-10 top-0 h-64 w-64 rounded-full bg-[rgba(94,92,230,0.1)] blur-3xl" />
           <div className="pointer-events-none absolute left-0 top-20 h-48 w-48 rounded-full bg-[rgba(154,146,255,0.1)] blur-3xl" />
@@ -311,7 +311,7 @@ export function XoxodevsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Why xoxodevs exists ──────────────────────────────────────── */}
+        {/* â”€â”€ Why xoxodevs exists â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.05}>
           <SectionMarker index="01" />
 
@@ -347,7 +347,7 @@ export function XoxodevsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── What xoxodevs builds ─────────────────────────────────────── */}
+        {/* â”€â”€ What xoxodevs builds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.1}>
           <SectionMarker index="02" />
 
@@ -357,7 +357,7 @@ export function XoxodevsPage() {
             </h2>
             <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
               The work is shaped around the project goal, the users, and the
-              right technical foundation — not around one fixed template or
+              right technical foundation â€” not around one fixed template or
               stack.
             </p>
           </div>
@@ -387,7 +387,7 @@ export function XoxodevsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Open work / GitHub org ───────────────────────────────────── */}
+        {/* â”€â”€ Open work / GitHub org â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="section-shell section-block"
           delay={0.15}
@@ -449,7 +449,7 @@ export function XoxodevsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Projects through xoxodevs ────────────────────────────────── */}
+        {/* â”€â”€ Projects through xoxodevs â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.2}>
           <SectionMarker index="04" />
 
@@ -471,7 +471,7 @@ export function XoxodevsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Building philosophy ──────────────────────────────────────── */}
+        {/* â”€â”€ Building philosophy â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="section-shell section-block relative"
           delay={0.25}
@@ -504,7 +504,7 @@ export function XoxodevsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="bg-[var(--editorial-foreground)] py-20 md:py-28"
           delay={0.3}
@@ -541,3 +541,5 @@ export function XoxodevsPage() {
     </PageScaffold>
   );
 }
+
+

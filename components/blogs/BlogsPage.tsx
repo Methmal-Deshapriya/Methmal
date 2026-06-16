@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowUpRight } from "lucide-react";
 
 import { PageScaffold } from "@/components/site/PageScaffold";
@@ -18,7 +18,7 @@ const blogPosts: BlogPost[] = [
     title:
       "Breaking Down Multiple Variable Linear Regression Model with House Price Prediction Model",
     excerpt:
-      "A practical walkthrough of multivariate linear regression — covering feature normalization, gradient descent across multiple parameters, and building a house price prediction model in Python from the ground up.",
+      "A practical walkthrough of multivariate linear regression â€” covering feature normalization, gradient descent across multiple parameters, and building a house price prediction model in Python from the ground up.",
     date: "Dec 2024",
     readTime: "13 min read",
     tags: ["Machine Learning", "Python", "Regression", "Supervised Learning"],
@@ -97,9 +97,9 @@ function BlogRow({ post }: { post: BlogPost }) {
 export function BlogsPage() {
   return (
     <PageScaffold active="Blogs">
-      <main className="pb-8 pt-28 md:pt-32">
+      <main className="pb-8 pt-10 md:pt-14">
 
-        {/* ── Hero ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block">
           <div className="max-w-4xl">
             <p className="font-mono text-[11px] uppercase tracking-[0.24em] text-[var(--editorial-primary)]">
@@ -113,13 +113,13 @@ export function BlogsPage() {
             <p className="mt-7 max-w-2xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
               Writing is how I slow down and verify that I actually understand
               something. These pieces cover the technical topics I&apos;m
-              working through — machine learning, software engineering, and the
+              working through â€” machine learning, software engineering, and the
               mechanics behind the systems I build.
             </p>
           </div>
         </SectionReveal>
 
-        {/* ── 01 Written Work ───────────────────────────────────────────── */}
+        {/* â”€â”€ 01 Written Work â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.05}>
           <SectionMarker index="01" label="Written work" />
 
@@ -130,7 +130,7 @@ export function BlogsPage() {
               </h2>
               <p className="mt-4 max-w-xl text-base leading-8 text-[var(--editorial-muted)]">
                 In-depth breakdowns of the concepts and systems behind the work
-                I build — written to be clear, not abbreviated.
+                I build â€” written to be clear, not abbreviated.
               </p>
             </div>
             <a
@@ -151,11 +151,11 @@ export function BlogsPage() {
           </div>
 
           <p className="mt-8 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
-            More articles in progress — updated as new writing is published.
+            More articles in progress â€” updated as new writing is published.
           </p>
         </SectionReveal>
 
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="bg-[var(--editorial-foreground)] py-20 md:py-28"
           delay={0.1}
@@ -165,7 +165,7 @@ export function BlogsPage() {
               Writing is thinking out loud.
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-white/60 md:text-lg">
-              Follow along on Medium for new articles as they ship — technical
+              Follow along on Medium for new articles as they ship â€” technical
               writing, machine learning breakdowns, and builder reflections.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -185,3 +185,5 @@ export function BlogsPage() {
     </PageScaffold>
   );
 }
+
+

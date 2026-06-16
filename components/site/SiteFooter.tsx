@@ -41,7 +41,7 @@ export function SiteFooter() {
         </div>
 
         <div className="flex flex-col gap-3 border-t border-[rgba(119,117,134,0.1)] pt-6 text-sm text-[var(--editorial-muted)] md:flex-row md:items-center md:justify-between">
-          <p>
+          <p className="hidden md:block">
             Built around real projects, clear thinking, and practical digital
             experiences.
           </p>

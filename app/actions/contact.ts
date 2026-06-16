@@ -1,6 +1,8 @@
 "use server";
 
-import nodemailer from "nodemailer";
+import { Resend } from "resend";
+
+const resend = new Resend(process.env.RESEND_API_KEY);
 
 interface ContactPayload {
   name: string;
@@ -19,22 +21,13 @@ export async function sendContactEmail(
   }
 
   try {
-    const transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.GMAIL_USER,
-        pass: process.env.GMAIL_APP_PASSWORD,
-      },
-    });
-
-    await transporter.sendMail({
-      from: `"Portfolio Contact" <${process.env.GMAIL_USER}>`,
+    const { error } = await resend.emails.send({
+      from: "Portfolio Contact <onboarding@resend.dev>",
       to: "methmaldeshapriya2002@gmail.com",
       replyTo: email,
       subject:
         subject?.trim() ||
         `Portfolio message${name ? ` from ${name}` : ""}`,
-      text: `From: ${name || "Anonymous"}\nEmail: ${email}\n${subject ? `Subject: ${subject}\n` : ""}\n${message}`,
       html: `
         <div style="font-family:system-ui,sans-serif;max-width:580px;margin:0 auto;padding:32px 24px">
           <p style="margin:0;color:#777586;font-size:11px;font-family:monospace;text-transform:uppercase;letter-spacing:3px">Portfolio contact</p>
@@ -46,6 +39,11 @@ export async function sendContactEmail(
         </div>
       `,
     });
+
+    if (error) {
+      console.error("[contact] resend error:", error);
+      return { success: false, error: "Failed to send. Please try again later." };
+    }
 
     return { success: true };
   } catch (err) {

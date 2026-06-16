@@ -8,7 +8,6 @@ export default function sitemap(): MetadataRoute.Sitemap {
     "/foundry",
     "/projects",
     "/blogs",
-    "/social",
     "/xoxodevs",
     "/connect",
   ];

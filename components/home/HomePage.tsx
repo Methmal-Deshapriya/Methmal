@@ -93,7 +93,7 @@ const pathwayCards: readonly PathwayCard[] = [
     title: "Social",
     description:
       "A curated surface for social presence, public profiles, and the platforms where I share work, ideas, and updates.",
-    href: "/social",
+    href: "/connect",
     badge: "Presence",
     accent: "wide",
     wide: true,
@@ -369,8 +369,8 @@ export function HomePage() {
 
   return (
     <PageScaffold active="Home">
-      <main className="pb-20 pt-6 md:pt-8">
-        <SectionReveal className="section-shell section-block pt-10 md:pt-16">
+      <main className="pb-20 pt-2 md:pt-4">
+        <SectionReveal className="section-shell section-block pt-8 md:pt-12">
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
               <div className="editorial-panel inline-flex w-fit items-center gap-2 px-4 py-2">
@@ -405,15 +405,17 @@ export function HomePage() {
             </div>
 
             <div className="lg:col-span-5">
-              <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px]">
-                <Image
-                  src="/hero.png"
-                  alt="Illustrated hero portrait"
-                  fill
-                  priority
-                  className="object-cover object-center"
-                  sizes="(min-width: 1024px) 32rem, 100vw"
-                />
+              <div className="mx-auto w-3/4 sm:w-2/3 lg:w-full">
+                <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px]">
+                  <Image
+                    src="/hero.png"
+                    alt="Illustrated hero portrait"
+                    fill
+                    priority
+                    className="object-cover object-center"
+                    sizes="(min-width: 1024px) 32rem, 100vw"
+                  />
+                </div>
               </div>
             </div>
           </div>

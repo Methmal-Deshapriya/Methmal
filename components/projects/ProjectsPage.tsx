@@ -1,10 +1,10 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import { ArrowUpRight, Database, Lightbulb, Rocket, Sparkles } from "lucide-react";
 
 import { PageScaffold } from "@/components/site/PageScaffold";
 import { SectionReveal } from "@/components/site/SectionReveal";
 
-// ── Types & Data ──────────────────────────────────────────────────────────────
+// â”€â”€ Types & Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 type ProjectLink = {
   label: string;
@@ -100,7 +100,7 @@ const projects: readonly Project[] = [
   },
   {
     index: "04",
-    title: "Foodapp — Recipe App",
+    title: "Foodapp â€” Recipe App",
     category: "React API Integration Project",
     description:
       "A React application built to practice API integration, dynamic search, recipe browsing, and state management using the Spoonacular API.",
@@ -170,7 +170,7 @@ const buildPrinciples = [
   },
 ] as const;
 
-// ── Sub-components ────────────────────────────────────────────────────────────
+// â”€â”€ Sub-components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function SectionMarker({ index }: { index: string }) {
   return (
@@ -288,14 +288,14 @@ function LearningProjectRow({ project }: { project: Project }) {
   );
 }
 
-// ── Page ──────────────────────────────────────────────────────────────────────
+// â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function ProjectsPage() {
   return (
     <PageScaffold active="Projects">
-      <main className="pb-8 pt-28 md:pt-32">
+      <main className="pb-8 pt-10 md:pt-14">
 
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
+        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block relative overflow-hidden">
           <div className="pointer-events-none absolute -right-10 top-0 h-64 w-64 rounded-full bg-[rgba(94,92,230,0.09)] blur-3xl" />
           <div className="pointer-events-none absolute left-0 top-24 h-48 w-48 rounded-full bg-[rgba(154,146,255,0.09)] blur-3xl" />
@@ -339,7 +339,7 @@ export function ProjectsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Featured Builds ──────────────────────────────────────────── */}
+        {/* â”€â”€ Featured Builds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.05}>
           <SectionMarker index="01" />
 
@@ -360,7 +360,7 @@ export function ProjectsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Learning Builds ──────────────────────────────────────────── */}
+        {/* â”€â”€ Learning Builds â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.1}>
           <SectionMarker index="02" />
 
@@ -382,7 +382,7 @@ export function ProjectsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── How I Build ──────────────────────────────────────────────── */}
+        {/* â”€â”€ How I Build â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="section-shell section-block relative"
           delay={0.15}
@@ -416,7 +416,7 @@ export function ProjectsPage() {
           </div>
         </SectionReveal>
 
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="bg-[var(--editorial-foreground)] py-20 md:py-28"
           delay={0.2}
@@ -451,3 +451,5 @@ export function ProjectsPage() {
     </PageScaffold>
   );
 }
+
+

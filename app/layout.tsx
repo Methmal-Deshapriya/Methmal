@@ -1,14 +1,53 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Hanken_Grotesk, Inter } from "next/font/google";
+import { Geist_Mono, Hanken_Grotesk, Inter } from "next/font/google";
 
 import "./globals.css";
 
 import { WelcomeOverlay } from "@/components/site/WelcomeOverlay";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
+const structuredData = {
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://methmaldeshapriya.com/#website",
+      url: "https://methmaldeshapriya.com",
+      name: "Methmal Deshapriya",
+      description:
+        "The personal portfolio of Methmal Deshapriya, focused on software engineering, AI-aware systems, and founder-led product building.",
+      inLanguage: "en-US",
+    },
+    {
+      "@type": "Person",
+      "@id": "https://methmaldeshapriya.com/#person",
+      name: "Methmal Deshapriya",
+      jobTitle: "Software Builder",
+      url: "https://methmaldeshapriya.com",
+      sameAs: [
+        "https://www.linkedin.com/in/methmal-deshapriya",
+        "https://github.com/Methmal-Deshapriya",
+        "https://www.instagram.com/__methmal__?igsh=eXdweHE3cmdlbzI5",
+      ],
+    },
+    {
+      "@type": "ProfilePage",
+      "@id": "https://methmaldeshapriya.com/#profile",
+      url: "https://methmaldeshapriya.com",
+      name: "Methmal Deshapriya | Software Builder",
+      description:
+        "A premium portfolio for Methmal Deshapriya focused on software engineering, systems thinking, AI-aware product building, and founder-led execution.",
+      isPartOf: {
+        "@id": "https://methmaldeshapriya.com/#website",
+      },
+      about: {
+        "@id": "https://methmaldeshapriya.com/#person",
+      },
+      mainEntity: {
+        "@id": "https://methmaldeshapriya.com/#person",
+      },
+    },
+  ],
+};
 
 const hankenGrotesk = Hanken_Grotesk({
   subsets: ["latin"],
@@ -75,20 +114,6 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
     creator: "@methmaldeshapriya",
   },
-  other: {
-    "script:ld+json": JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Person",
-      name: "Methmal Deshapriya",
-      jobTitle: "Software Builder",
-      url: "https://methmaldeshapriya.com",
-      sameAs: [
-        "https://www.linkedin.com/in/methmal-deshapriya",
-        "https://github.com/Methmal-Deshapriya",
-        "https://www.instagram.com/__methmal__?igsh=eXdweHE3cmdlbzI5",
-      ],
-    }),
-  },
 };
 
 export default function RootLayout({
@@ -98,8 +123,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
+      <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(structuredData),
+          }}
+        />
+      </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} ${hankenGrotesk.variable} ${inter.variable} antialiased`}
+        className={`${geistMono.variable} ${hankenGrotesk.variable} ${inter.variable} antialiased`}
       >
         <WelcomeOverlay />
         {children}

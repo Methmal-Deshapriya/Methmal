@@ -1,5 +1,4 @@
-import Link from "next/link";
-import {
+﻿import {
   BrainCircuit,
   GitBranch,
   Globe,
@@ -12,7 +11,7 @@ import {
 import { PageScaffold } from "@/components/site/PageScaffold";
 import { SectionReveal } from "@/components/site/SectionReveal";
 
-// ── Data ─────────────────────────────────────────────────────────────────────
+// â”€â”€ Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 const identityItems = [
   "Practical technology education",
@@ -47,7 +46,8 @@ const roleCards = [
   {
     index: "01",
     title: "Lesson Design",
-    description: "Turning technical topics into simple, structured learning paths.",
+    description:
+      "Turning technical topics into simple, structured learning paths.",
   },
   {
     index: "02",
@@ -131,7 +131,7 @@ const directionSteps = [
   },
 ] as const;
 
-// ── Sub-components ────────────────────────────────────────────────────────────
+// â”€â”€ Sub-components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 function SectionMarker({ index }: { index: string }) {
   return (
@@ -144,14 +144,13 @@ function SectionMarker({ index }: { index: string }) {
   );
 }
 
-// ── Page ──────────────────────────────────────────────────────────────────────
+// â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
 
 export function FoundryPage() {
   return (
     <PageScaffold active="Foundry">
-      <main className="pb-8 pt-28 md:pt-32">
-
-        {/* ── Hero ─────────────────────────────────────────────────────── */}
+      <main className="pb-8 pt-10 md:pt-14">
+        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block relative overflow-hidden">
           <div className="pointer-events-none absolute -right-10 top-0 h-64 w-64 rounded-full bg-[rgba(94,92,230,0.1)] blur-3xl" />
           <div className="pointer-events-none absolute left-0 top-20 h-48 w-48 rounded-full bg-[rgba(154,146,255,0.1)] blur-3xl" />
@@ -195,7 +194,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Why it exists ────────────────────────────────────────────── */}
+        {/* â”€â”€ Why it exists â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.05}>
           <SectionMarker index="01" />
 
@@ -231,7 +230,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* ── My role ──────────────────────────────────────────────────── */}
+        {/* â”€â”€ My role â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.1}>
           <SectionMarker index="02" />
 
@@ -268,7 +267,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* ── Learning areas ───────────────────────────────────────────── */}
+        {/* â”€â”€ Learning areas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="section-shell section-block relative"
           delay={0.15}
@@ -283,43 +282,45 @@ export function FoundryPage() {
           </div>
 
           <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
-            {learningAreas.map(({ badge, title, description, tags, icon: Icon }) => (
-              <article
-                key={title}
-                className="editorial-panel group flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1 md:p-8"
-              >
-                <div className="flex items-start justify-between gap-4">
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[rgba(94,92,230,0.08)] text-[var(--editorial-primary)] transition-colors duration-300 group-hover:bg-[rgba(94,92,230,0.12)]">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                  <span className="rounded-full bg-[rgba(94,92,230,0.07)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]">
-                    {badge}
-                  </span>
-                </div>
-
-                <h3 className="mt-6 font-hanken text-2xl font-semibold tracking-[-0.04em] text-[var(--editorial-foreground)]">
-                  {title}
-                </h3>
-                <p className="mt-3 flex-1 text-base leading-7 text-[var(--editorial-muted)]">
-                  {description}
-                </p>
-
-                <div className="mt-6 flex flex-wrap gap-2 border-t border-[rgba(119,117,134,0.1)] pt-5">
-                  {tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.05)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--editorial-primary)]"
-                    >
-                      {tag}
+            {learningAreas.map(
+              ({ badge, title, description, tags, icon: Icon }) => (
+                <article
+                  key={title}
+                  className="editorial-panel group flex flex-col p-7 transition-transform duration-300 hover:-translate-y-1 md:p-8"
+                >
+                  <div className="flex items-start justify-between gap-4">
+                    <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-[rgba(94,92,230,0.08)] text-[var(--editorial-primary)] transition-colors duration-300 group-hover:bg-[rgba(94,92,230,0.12)]">
+                      <Icon className="h-5 w-5" />
+                    </div>
+                    <span className="rounded-full bg-[rgba(94,92,230,0.07)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]">
+                      {badge}
                     </span>
-                  ))}
-                </div>
-              </article>
-            ))}
+                  </div>
+
+                  <h3 className="mt-6 font-hanken text-2xl font-semibold tracking-[-0.04em] text-[var(--editorial-foreground)]">
+                    {title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-base leading-7 text-[var(--editorial-muted)]">
+                    {description}
+                  </p>
+
+                  <div className="mt-6 flex flex-wrap gap-2 border-t border-[rgba(119,117,134,0.1)] pt-5">
+                    {tags.map((tag) => (
+                      <span
+                        key={tag}
+                        className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.05)] px-3 py-1 font-mono text-[10px] uppercase tracking-[0.16em] text-[var(--editorial-primary)]"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                </article>
+              ),
+            )}
           </div>
         </SectionReveal>
 
-        {/* ── Recent direction ─────────────────────────────────────────── */}
+        {/* â”€â”€ Recent direction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.2}>
           <SectionMarker index="04" />
 
@@ -335,66 +336,68 @@ export function FoundryPage() {
           </div>
 
           <div className="grid grid-cols-1 divide-y divide-[rgba(119,117,134,0.12)] overflow-hidden rounded-xl border border-[rgba(119,117,134,0.12)] md:grid-cols-3 md:divide-x md:divide-y-0">
-            {directionSteps.map(({ step, title, description, status, dark }) => (
-              <div
-                key={step}
-                className={`flex flex-col p-8 md:p-10 ${
-                  dark
-                    ? "bg-[var(--editorial-foreground)]"
-                    : "bg-white/40"
-                }`}
-              >
-                <span
-                  className={`font-mono text-[11px] uppercase tracking-[0.22em] ${
-                    dark ? "text-white/50" : "text-[var(--editorial-muted-soft)]"
-                  }`}
-                >
-                  {step}
-                </span>
-                <h3
-                  className={`mt-5 font-hanken text-2xl font-semibold tracking-[-0.04em] ${
-                    dark ? "text-white" : "text-[var(--editorial-foreground)]"
-                  }`}
-                >
-                  {title}
-                </h3>
-                <p
-                  className={`mt-3 flex-1 text-base leading-7 ${
-                    dark ? "text-white/65" : "text-[var(--editorial-muted)]"
-                  }`}
-                >
-                  {description}
-                </p>
+            {directionSteps.map(
+              ({ step, title, description, status, dark }) => (
                 <div
-                  className={`mt-8 flex items-center gap-3 border-t pt-6 ${
-                    dark
-                      ? "border-white/12"
-                      : "border-[rgba(119,117,134,0.12)]"
+                  key={step}
+                  className={`flex flex-col p-8 md:p-10 ${
+                    dark ? "bg-[var(--editorial-foreground)]" : "bg-white/40"
                   }`}
                 >
                   <span
-                    className={`h-1.5 w-1.5 shrink-0 rounded-full ${
+                    className={`font-mono text-[11px] uppercase tracking-[0.22em] ${
                       dark
-                        ? "bg-[var(--editorial-primary)] shadow-[0_0_0_3px_rgba(94,92,230,0.22)]"
-                        : "bg-[rgba(119,117,134,0.35)]"
-                    }`}
-                  />
-                  <span
-                    className={`font-mono text-[10px] uppercase tracking-[0.22em] ${
-                      dark
-                        ? "text-[rgba(180,178,255,0.85)]"
+                        ? "text-white/50"
                         : "text-[var(--editorial-muted-soft)]"
                     }`}
                   >
-                    {status}
+                    {step}
                   </span>
+                  <h3
+                    className={`mt-5 font-hanken text-2xl font-semibold tracking-[-0.04em] ${
+                      dark ? "text-white" : "text-[var(--editorial-foreground)]"
+                    }`}
+                  >
+                    {title}
+                  </h3>
+                  <p
+                    className={`mt-3 flex-1 text-base leading-7 ${
+                      dark ? "text-white/65" : "text-[var(--editorial-muted)]"
+                    }`}
+                  >
+                    {description}
+                  </p>
+                  <div
+                    className={`mt-8 flex items-center gap-3 border-t pt-6 ${
+                      dark
+                        ? "border-white/12"
+                        : "border-[rgba(119,117,134,0.12)]"
+                    }`}
+                  >
+                    <span
+                      className={`h-1.5 w-1.5 shrink-0 rounded-full ${
+                        dark
+                          ? "bg-[var(--editorial-primary)] shadow-[0_0_0_3px_rgba(94,92,230,0.22)]"
+                          : "bg-[rgba(119,117,134,0.35)]"
+                      }`}
+                    />
+                    <span
+                      className={`font-mono text-[10px] uppercase tracking-[0.22em] ${
+                        dark
+                          ? "text-[rgba(180,178,255,0.85)]"
+                          : "text-[var(--editorial-muted-soft)]"
+                      }`}
+                    >
+                      {status}
+                    </span>
+                  </div>
                 </div>
-              </div>
-            ))}
+              ),
+            )}
           </div>
         </SectionReveal>
 
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="bg-[var(--editorial-foreground)] py-20 md:py-28"
           delay={0.25}
@@ -408,16 +411,17 @@ export function FoundryPage() {
               deeply, build real projects, and grow with a practical mindset.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link
-                href="/connect"
+              <a
+                href="https://www.foundryacademy.lk"
+                target="_blank"
+                rel="noreferrer"
                 className="inline-flex min-w-52 items-center justify-center rounded-xl bg-white px-6 py-3 text-sm font-medium text-[var(--editorial-foreground)] shadow-[0_10px_24px_rgba(255,255,255,0.06)] transition-all duration-300 hover:-translate-y-0.5 hover:opacity-95"
               >
-                Explore learning work
-              </Link>
+                Explore Foundry Academy
+              </a>
             </div>
           </div>
         </SectionReveal>
-
       </main>
     </PageScaffold>
   );

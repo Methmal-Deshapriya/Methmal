@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import {
   ArrowUpRight,
   AtSign,
@@ -123,9 +123,9 @@ function SocialCard({ label, handle, href, icon: Icon }: SocialCardProps) {
 export function ConnectPage() {
   return (
     <PageScaffold active="Connect">
-      <main className="pb-8 pt-28 md:pt-32">
+      <main className="pb-8 pt-10 md:pt-14">
 
-        {/* ── Hero ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block relative overflow-hidden">
           <div className="pointer-events-none absolute left-0 top-0 h-44 w-44 rounded-full bg-[rgba(94,92,230,0.12)] blur-3xl" />
           <div className="pointer-events-none absolute right-10 top-4 h-52 w-52 rounded-full bg-[rgba(158,153,255,0.12)] blur-3xl" />
@@ -147,7 +147,7 @@ export function ConnectPage() {
           </div>
         </SectionReveal>
 
-        {/* ── 01 Form + Social Directory ────────────────────────────────── */}
+        {/* â”€â”€ 01 Form + Social Directory â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.05}>
           <div className="grid grid-cols-1 gap-14 lg:grid-cols-12 lg:gap-12">
             <div className="lg:col-span-7">
@@ -166,7 +166,7 @@ export function ConnectPage() {
           </div>
         </SectionReveal>
 
-        {/* ── 03 Connecting Context ─────────────────────────────────────── */}
+        {/* â”€â”€ 03 Connecting Context â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block" delay={0.1}>
           <SectionMarker index="03" label="Connecting context" />
           <div className="grid grid-cols-1 gap-8 border-t border-[rgba(119,117,134,0.12)] pt-10 md:grid-cols-3">
@@ -183,7 +183,7 @@ export function ConnectPage() {
           </div>
         </SectionReveal>
 
-        {/* ── CTA ──────────────────────────────────────────────────────── */}
+        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal
           className="bg-[var(--editorial-foreground)] py-20 md:py-28"
           delay={0.15}
@@ -194,7 +194,7 @@ export function ConnectPage() {
             </h2>
             <p className="mx-auto mt-6 max-w-xl text-base leading-8 text-white/60 md:text-lg">
               Whether it&apos;s a new product, a technical challenge, or a
-              collaboration worth building — use the form above or find me on
+              collaboration worth building â€” use the form above or find me on
               any of the channels listed.
             </p>
             <div className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row">
@@ -212,3 +212,5 @@ export function ConnectPage() {
     </PageScaffold>
   );
 }
+
+
