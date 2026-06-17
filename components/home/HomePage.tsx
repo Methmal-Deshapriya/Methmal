@@ -371,7 +371,7 @@ export function HomePage() {
     <PageScaffold active="Home">
       <main className="pb-20 pt-2 md:pt-4">
         <SectionReveal className="section-shell section-block pt-8 md:pt-12">
-          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-end">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-12 lg:items-center">
             <div className="lg:col-span-7">
               <div className="editorial-panel inline-flex w-fit items-center gap-2 px-4 py-2">
                 <Sparkles className="h-4 w-4 text-[var(--editorial-primary)]" />
@@ -394,26 +394,40 @@ export function HomePage() {
                 real-world product execution.
               </p>
 
-              <div className="mt-10 flex flex-wrap gap-4">
-                <Link href="/projects" className="editorial-button-primary">
+              <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:gap-4">
+                <Link
+                  href="/projects"
+                  className="editorial-button-primary w-full sm:w-auto"
+                >
                   View selected work
                 </Link>
-                <Link href="/education" className="editorial-button-secondary">
+                <Link
+                  href="/education"
+                  className="editorial-button-secondary w-full sm:w-auto"
+                >
                   Explore background
                 </Link>
               </div>
             </div>
 
-            <div className="lg:col-span-5">
-              <div className="mx-auto w-3/4 sm:w-2/3 lg:w-full">
+            <div className="lg:col-span-5 lg:flex lg:justify-center">
+              <div className="mx-auto w-full max-w-[18rem] sm:max-w-[22rem] md:max-w-[24rem] lg:max-w-[30rem]">
                 <div className="relative aspect-[4/5] w-full overflow-hidden rounded-[28px]">
+                  <Image
+                    src="/methmal.png"
+                    alt="Illustrated portrait of Methmal Deshapriya"
+                    fill
+                    priority
+                    className="object-cover object-center lg:hidden"
+                    sizes="(min-width: 768px) 24rem, 18rem"
+                  />
                   <Image
                     src="/hero.png"
                     alt="Illustrated hero portrait"
                     fill
                     priority
-                    className="object-cover object-center"
-                    sizes="(min-width: 1024px) 32rem, 100vw"
+                    className="hidden object-cover object-center lg:block"
+                    sizes="30rem"
                   />
                 </div>
               </div>
