@@ -10,7 +10,6 @@
     "indexnow:submit": "node scripts/submit-indexnow.mjs"
   },
   "dependencies": {
-    "@sentry/nextjs": "^10.19.0",
     "lucide-react": "^0.544.0",
     "mini-svg-data-uri": "^1.4.4",
     "motion": "^12.23.22",
