@@ -3,48 +3,46 @@ import { Geist_Mono, Hanken_Grotesk, Inter } from "next/font/google";
 
 import "./globals.css";
 
+import {
+  OG_IMAGE_URL,
+  PROFILE_IMAGE_URL,
+  SAME_AS_LINKS,
+  SITE_DESCRIPTION,
+  SITE_NAME,
+  SITE_OG_DESCRIPTION,
+  SITE_TITLE,
+  SITE_TWITTER_DESCRIPTION,
+  SITE_URL,
+  TWITTER_HANDLE,
+} from "@/app/metadata";
 import { WelcomeOverlay } from "@/components/site/WelcomeOverlay";
+
+const websiteId = `${SITE_URL}/#website`;
+const personId = `${SITE_URL}/#person`;
 
 const structuredData = {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "WebSite",
-      "@id": "https://methmaldeshapriya.com/#website",
-      url: "https://methmaldeshapriya.com",
-      name: "Methmal Deshapriya",
-      description:
-        "The personal portfolio of Methmal Deshapriya, focused on software engineering, AI-aware systems, and founder-led product building.",
+      "@id": websiteId,
+      url: SITE_URL,
+      name: SITE_NAME,
+      description: SITE_DESCRIPTION,
       inLanguage: "en-US",
+      publisher: {
+        "@id": personId,
+      },
     },
     {
       "@type": "Person",
-      "@id": "https://methmaldeshapriya.com/#person",
-      name: "Methmal Deshapriya",
+      "@id": personId,
+      name: SITE_NAME,
       jobTitle: "Software Builder",
-      url: "https://methmaldeshapriya.com",
-      sameAs: [
-        "https://www.linkedin.com/in/methmal-deshapriya",
-        "https://github.com/Methmal-Deshapriya",
-        "https://www.instagram.com/__methmal__?igsh=eXdweHE3cmdlbzI5",
-      ],
-    },
-    {
-      "@type": "ProfilePage",
-      "@id": "https://methmaldeshapriya.com/#profile",
-      url: "https://methmaldeshapriya.com",
-      name: "Methmal Deshapriya | Software Builder",
-      description:
-        "A premium portfolio for Methmal Deshapriya focused on software engineering, systems thinking, AI-aware product building, and founder-led execution.",
-      isPartOf: {
-        "@id": "https://methmaldeshapriya.com/#website",
-      },
-      about: {
-        "@id": "https://methmaldeshapriya.com/#person",
-      },
-      mainEntity: {
-        "@id": "https://methmaldeshapriya.com/#person",
-      },
+      description: SITE_DESCRIPTION,
+      url: SITE_URL,
+      image: PROFILE_IMAGE_URL,
+      sameAs: SAME_AS_LINKS,
     },
   ],
 };
@@ -67,9 +65,8 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Methmal Deshapriya | Software Builder",
-  description:
-    "A premium portfolio for Methmal Deshapriya focused on software engineering, systems thinking, AI-aware product building, and founder-led execution.",
+  title: SITE_TITLE,
+  description: SITE_DESCRIPTION,
   icons: {
     icon: "/favicon.png",
     shortcut: "/favicon.png",
@@ -86,21 +83,34 @@ export const metadata: Metadata = {
     "Software Engineer Portfolio",
   ],
   authors: [
-    { name: "Methmal Deshapriya", url: "https://methmaldeshapriya.com" },
+    { name: SITE_NAME, url: SITE_URL },
   ],
-  metadataBase: new URL("https://methmaldeshapriya.com"),
+  metadataBase: new URL(SITE_URL),
+  alternates: {
+    canonical: SITE_URL,
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+      "max-video-preview": -1,
+    },
+  },
   openGraph: {
-    title: "Methmal Deshapriya | Software Builder",
-    description:
-      "Explore Methmal Deshapriya's work across software engineering, AI-aware systems, and founder-led product building.",
-    url: "https://methmaldeshapriya.com",
-    siteName: "Methmal Deshapriya",
+    title: SITE_TITLE,
+    description: SITE_OG_DESCRIPTION,
+    url: SITE_URL,
+    siteName: SITE_NAME,
     images: [
       {
-        url: "/og-image.png",
+        url: OG_IMAGE_URL,
         width: 1200,
         height: 630,
-        alt: "Methmal Deshapriya Portfolio",
+        alt: `${SITE_NAME} Portfolio`,
       },
     ],
     locale: "en_US",
@@ -108,11 +118,10 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Methmal Deshapriya | Software Builder",
-    description:
-      "Software engineering, systems thinking, AI-aware products, and modern web craftsmanship by Methmal Deshapriya.",
-    images: ["/og-image.png"],
-    creator: "@methmaldeshapriya",
+    title: SITE_TITLE,
+    description: SITE_TWITTER_DESCRIPTION,
+    images: [OG_IMAGE_URL],
+    creator: TWITTER_HANDLE,
   },
 };
 
