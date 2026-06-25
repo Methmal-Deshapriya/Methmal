@@ -24,6 +24,17 @@ const blogPosts: BlogPost[] = [
     tags: ["Machine Learning", "Python", "Regression", "Supervised Learning"],
     href: "https://medium.com/@methmaldeshapriya2002/breaking-down-multiple-variable-linear-regression-model-with-house-price-prediction-model-08a547b00bf0",
   },
+
+  {
+    title:
+      "What I Found While Researching MDM Bypass Prevention for Financed Android Devices",
+    excerpt:
+      "A research-based breakdown of why financed Android device locking is more than a normal MDM problem — covering Android Enterprise, Zero-touch enrollment, DPC limitations, OEM-level locking, and practical implementation challenges.",
+    date: "Jun 2026",
+    readTime: "8 min read",
+    tags: ["Android", "MDM", "Cybersecurity", "Android Enterprise"],
+    href: "https://medium.com/@methmaldeshapriya2002/what-i-found-while-researching-mdm-bypass-prevention-for-financed-android-devices-2d91198613cc",
+  },
 ];
 
 function SectionMarker({ index, label }: { index: string; label: string }) {
@@ -98,7 +109,6 @@ export function BlogsPage() {
   return (
     <PageScaffold active="Blogs">
       <main className="pb-8 pt-10 md:pt-14">
-
         {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
         <SectionReveal className="section-shell section-block">
           <div className="max-w-4xl">
@@ -113,8 +123,8 @@ export function BlogsPage() {
             <p className="mt-7 max-w-2xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
               Writing is how I slow down and verify that I actually understand
               something. These pieces cover the technical topics I&apos;m
-              working through â€” machine learning, software engineering, and the
-              mechanics behind the systems I build.
+              working through â€” machine learning, software engineering, and
+              the mechanics behind the systems I build.
             </p>
           </div>
         </SectionReveal>
@@ -180,10 +190,7 @@ export function BlogsPage() {
             </div>
           </div>
         </SectionReveal>
-
       </main>
     </PageScaffold>
   );
 }
-
-
