@@ -49,6 +49,8 @@ type PathwayCard = {
   accent: "soft" | "dark" | "primary" | "wide";
   wide?: boolean;
   platforms?: readonly string[];
+  topics?: readonly string[];
+  sideLabel?: string;
 };
 
 const pathwayCards: readonly PathwayCard[] = [
@@ -97,7 +99,20 @@ const pathwayCards: readonly PathwayCard[] = [
     badge: "Presence",
     accent: "wide",
     wide: true,
+    sideLabel: "Digital presence",
     platforms: ["LinkedIn", "GitHub", "Instagram", "Email"],
+  },
+  {
+    index: "06",
+    title: "Blogs",
+    description:
+      "Technical articles on Medium and free YouTube sessions — writing and teaching on machine learning, software engineering, and the systems I build.",
+    href: "/blogs",
+    badge: "Writing",
+    accent: "wide",
+    wide: true,
+    sideLabel: "Topics covered",
+    topics: ["Machine Learning", "Software Engineering", "YouTube Sessions", "Technical Writing"],
   },
 ];
 
@@ -365,7 +380,7 @@ function ServiceCard({
 
 export function HomePage() {
   const primaryPathways = pathwayCards.filter((card) => !card.wide);
-  const socialPathway = pathwayCards.find((card) => card.wide);
+  const widePathways = pathwayCards.filter((card) => card.wide);
 
   return (
     <PageScaffold active="Home">
@@ -516,48 +531,49 @@ export function HomePage() {
             ))}
           </div>
 
-          {socialPathway ? (
+          {widePathways.map((pathway, i) => (
             <Link
-              href={socialPathway.href}
-              className="group mt-12 block border-y border-[rgba(119,117,134,0.12)] py-8"
+              key={pathway.title}
+              href={pathway.href}
+              className={`group block border-b border-[rgba(119,117,134,0.12)] py-8 transition-transform duration-300 hover:-translate-y-0.5 ${i === 0 ? "mt-12 border-t" : ""}`}
             >
               <div className="grid gap-8 md:grid-cols-[1.2fr_0.9fr] md:items-end">
                 <div>
                   <div className="flex items-start justify-between gap-4">
                     <div>
                       <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
-                        {socialPathway.index}
+                        {pathway.index}
                       </p>
-                      <h3 className="mt-3 font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)] md:text-5xl">
-                        {socialPathway.title}
+                      <h3 className="mt-3 font-hanken text-2xl font-semibold tracking-[-0.04em] text-[var(--editorial-foreground)] md:text-[1.9rem]">
+                        {pathway.title}
                       </h3>
                     </div>
                     <ArrowUpRight className="mt-1 h-5 w-5 shrink-0 text-[var(--editorial-muted)] transition-colors duration-300 group-hover:text-[var(--editorial-primary)]" />
                   </div>
 
                   <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
-                    {socialPathway.description}
+                    {pathway.description}
                   </p>
                 </div>
 
                 <div className="md:justify-self-end">
                   <p className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
-                    Digital presence
+                    {pathway.sideLabel}
                   </p>
                   <div className="mt-4 flex max-w-md flex-wrap gap-2.5">
-                    {socialPathway.platforms?.map((platform) => (
+                    {(pathway.platforms ?? pathway.topics)?.map((tag) => (
                       <span
-                        key={platform}
+                        key={tag}
                         className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(255,255,255,0.68)] px-3 py-1.5 font-mono text-[10px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]"
                       >
-                        {platform}
+                        {tag}
                       </span>
                     ))}
                   </div>
 
                   <div className="mt-6 flex items-center gap-3">
                     <span className="rounded-full border border-[rgba(94,92,230,0.12)] bg-[rgba(94,92,230,0.05)] px-2.5 py-1 font-mono text-[9px] uppercase tracking-[0.18em] text-[var(--editorial-primary)]">
-                      {socialPathway.badge}
+                      {pathway.badge}
                     </span>
                     <span className="h-px flex-1 bg-[rgba(94,92,230,0.14)]" />
                     <span className="font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted)]">
@@ -567,7 +583,7 @@ export function HomePage() {
                 </div>
               </div>
             </Link>
-          ) : null}
+          ))}
         </SectionReveal>
 
         <SectionReveal className="section-shell section-block">
