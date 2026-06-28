@@ -2,17 +2,17 @@ import type { Metadata } from "next";
 
 export const SITE_URL = "https://methmaldeshapriya.com";
 export const SITE_NAME = "Methmal Deshapriya";
-export const SITE_TITLE = "Methmal Deshapriya | Software Builder";
+export const SITE_TITLE = "Methmal Deshapriya | Software Engineer";
 export const SITE_DESCRIPTION =
-  "A premium portfolio for Methmal Deshapriya focused on software engineering, systems thinking, AI-aware product building, and founder-led execution.";
+  "Methmal Deshapriya — software engineer, full-stack developer, and educator. Building projects in web development, machine learning, and AI.";
 export const SITE_OG_DESCRIPTION =
-  "Explore Methmal Deshapriya's work across software engineering, AI-aware systems, and founder-led product building.";
+  "Software engineering, full-stack development, machine learning, and tech education by Methmal Deshapriya.";
 export const SITE_TWITTER_DESCRIPTION =
-  "Software engineering, systems thinking, AI-aware products, and modern web craftsmanship by Methmal Deshapriya.";
+  "Software engineering, machine learning, and tech education by Methmal Deshapriya.";
 export const OG_IMAGE_URL = `${SITE_URL}/og-image.png`;
 export const PROFILE_IMAGE_URL = `${SITE_URL}/methmal.png`;
 export const TWITTER_HANDLE = "@methmaldeshapriya";
-export const SITE_LAST_MODIFIED = "2026-06-17T17:10:12+05:30";
+export const SITE_LAST_MODIFIED = "2026-06-22T12:00:00+05:30";
 
 export const SAME_AS_LINKS = [
   "https://www.linkedin.com/in/methmal-deshapriya",

@@ -6,7 +6,7 @@ import { XoxodevsPage } from "@/components/xoxodevs/XoxodevsPage";
 export const metadata: Metadata = createPageMetadata({
   title: "xoxodevs | Methmal Deshapriya",
   description:
-    "Explore xoxodevs, the founder-led software studio by Methmal Deshapriya focused on MVPs, practical products, and AI-ready systems.",
+    "xoxodevs is a software studio by Methmal Deshapriya building MVPs, practical products, and modern web applications.",
   path: "/xoxodevs",
 });
 
