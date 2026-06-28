@@ -6,7 +6,7 @@ import { ConnectPage } from "@/components/connect/ConnectPage";
 export const metadata: Metadata = createPageMetadata({
   title: "Connect | Methmal Deshapriya",
   description:
-    "Contact Methmal Deshapriya for software collaborations, product engineering work, and thoughtfully built digital products.",
+    "Get in touch with Methmal Deshapriya for software collaborations, freelance work, or project enquiries.",
   path: "/connect",
 });
 

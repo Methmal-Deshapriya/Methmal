@@ -1,9 +1,11 @@
 ﻿import {
+  ArrowUpRight,
   BrainCircuit,
   GitBranch,
   Globe,
   Layers,
   Lightbulb,
+  Play,
   Shield,
   Wrench,
 } from "lucide-react";
@@ -11,7 +13,7 @@
 import { PageScaffold } from "@/components/site/PageScaffold";
 import { SectionReveal } from "@/components/site/SectionReveal";
 
-// â”€â”€ Data â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â"€â"€ Data â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 const identityItems = [
   "Practical technology education",
@@ -104,6 +106,33 @@ const learningAreas = [
   },
 ] as const;
 
+const freeSessions = [
+  {
+    id: "Ak0slj9ZMYs",
+    title: "Python FastAPI Backend Tutorial",
+    subtitle: "Connect ML Model with Pickle File — සිංහලෙන්",
+    description:
+      "Build a FastAPI backend from scratch and connect it to a trained machine learning model using pickle files. Explained step by step in Sinhala.",
+    url: "https://youtu.be/Ak0slj9ZMYs",
+  },
+  {
+    id: "av_XP2UIEmA",
+    title: "React JS Frontend Tutorial",
+    subtitle: "Connect FastAPI Backend & Deploy to Cloud — සිංහලෙන්",
+    description:
+      "Build a React frontend, connect it to a FastAPI backend, and deploy the full-stack application to the cloud. Explained in Sinhala.",
+    url: "https://youtu.be/av_XP2UIEmA",
+  },
+  {
+    id: "Jnl-SbFe_BU",
+    title: "GitHub & LinkedIn Workshop",
+    subtitle: "Foundry Academy Workshop",
+    description:
+      "A practical workshop on using GitHub for version control and building your developer profile on LinkedIn for professional visibility.",
+    url: "https://youtu.be/Jnl-SbFe_BU",
+  },
+] as const;
+
 const directionSteps = [
   {
     step: "STEP 01",
@@ -131,7 +160,7 @@ const directionSteps = [
   },
 ] as const;
 
-// â”€â”€ Sub-components â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+// â"€â"€ Sub-components â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 function SectionMarker({ index }: { index: string }) {
   return (
@@ -144,13 +173,72 @@ function SectionMarker({ index }: { index: string }) {
   );
 }
 
-// â”€â”€ Page â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€
+function VideoRow({ session }: { session: (typeof freeSessions)[number] }) {
+  return (
+    <article className="group border-b border-[rgba(119,117,134,0.12)] py-8 transition-colors duration-200 hover:border-[rgba(94,92,230,0.18)]">
+      <div className="flex flex-col gap-5 sm:flex-row sm:items-start sm:gap-7">
+        <a
+          href={session.url}
+          target="_blank"
+          rel="noreferrer"
+          className="relative aspect-video w-full shrink-0 overflow-hidden rounded-lg sm:w-44"
+        >
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={`https://img.youtube.com/vi/${session.id}/hqdefault.jpg`}
+            alt={session.title}
+            loading="lazy"
+            className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
+          />
+          <div className="absolute inset-0 flex items-center justify-center bg-black/30 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+            <div className="flex h-9 w-9 items-center justify-center rounded-full bg-white/90">
+              <Play className="h-4 w-4 translate-x-0.5 text-[var(--editorial-foreground)]" />
+            </div>
+          </div>
+        </a>
+
+        <div className="min-w-0 flex-1">
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-baseline sm:gap-5">
+            <a
+              href={session.url}
+              target="_blank"
+              rel="noreferrer"
+              className="font-hanken text-xl font-semibold tracking-[-0.03em] text-[var(--editorial-foreground)] transition-colors duration-200 group-hover:text-[var(--editorial-primary)]"
+            >
+              {session.title}
+            </a>
+            <span className="shrink-0 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted-soft)]">
+              {session.subtitle}
+            </span>
+          </div>
+          <p className="mt-3 max-w-2xl text-sm leading-7 text-[var(--editorial-muted)]">
+            {session.description}
+          </p>
+        </div>
+
+        <div className="flex shrink-0 flex-row items-center sm:flex-col sm:items-end">
+          <a
+            href={session.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-1.5 font-mono text-[10px] uppercase tracking-[0.22em] text-[var(--editorial-muted)] transition-colors duration-200 hover:text-[var(--editorial-primary)]"
+          >
+            Watch on YouTube
+            <ArrowUpRight className="h-3 w-3" />
+          </a>
+        </div>
+      </div>
+    </article>
+  );
+}
+
+// â"€â"€ Page â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€
 
 export function FoundryPage() {
   return (
     <PageScaffold active="Foundry">
       <main className="pb-8 pt-10 md:pt-14">
-        {/* â”€â”€ Hero â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* â"€â"€ Hero â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
         <SectionReveal className="section-shell section-block relative overflow-hidden">
           <div className="pointer-events-none absolute -right-10 top-0 h-64 w-64 rounded-full bg-[rgba(94,92,230,0.1)] blur-3xl" />
           <div className="pointer-events-none absolute left-0 top-20 h-48 w-48 rounded-full bg-[rgba(154,146,255,0.1)] blur-3xl" />
@@ -194,7 +282,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* â”€â”€ Why it exists â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* â"€â"€ Why it exists â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
         <SectionReveal className="section-shell section-block" delay={0.05}>
           <SectionMarker index="01" />
 
@@ -230,7 +318,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* â”€â”€ My role â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* â"€â"€ My role â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
         <SectionReveal className="section-shell section-block" delay={0.1}>
           <SectionMarker index="02" />
 
@@ -267,7 +355,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* â”€â”€ Learning areas â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* â"€â"€ Learning areas â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
         <SectionReveal
           className="section-shell section-block relative"
           delay={0.15}
@@ -320,7 +408,7 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* â”€â”€ Recent direction â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* â"€â"€ Recent direction â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€â"€ */}
         <SectionReveal className="section-shell section-block" delay={0.2}>
           <SectionMarker index="04" />
 
@@ -397,7 +485,28 @@ export function FoundryPage() {
           </div>
         </SectionReveal>
 
-        {/* â”€â”€ CTA â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€â”€ */}
+        {/* Free Sessions */}
+        <SectionReveal className="section-shell section-block" delay={0.22}>
+          <SectionMarker index="05" />
+
+          <div className="mb-10">
+            <h2 className="max-w-3xl font-hanken text-3xl font-semibold tracking-[-0.05em] text-[var(--editorial-foreground)] md:text-4xl">
+              Free sessions on YouTube.
+            </h2>
+            <p className="mt-5 max-w-2xl text-base leading-8 text-[var(--editorial-muted)] md:text-lg">
+              A selection of free lessons conducted by me for Foundry Academy.
+              practical, beginner-friendly, and explained in Sinhala.
+            </p>
+          </div>
+
+          <div className="border-t border-[rgba(119,117,134,0.12)]">
+            {freeSessions.map((session) => (
+              <VideoRow key={session.id} session={session} />
+            ))}
+          </div>
+        </SectionReveal>
+
+        {/* CTA */}
         <SectionReveal
           className="bg-[var(--editorial-foreground)] py-20 md:py-28"
           delay={0.25}

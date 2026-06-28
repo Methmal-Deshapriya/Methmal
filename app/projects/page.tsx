@@ -6,7 +6,7 @@ import { ProjectsPage } from "@/components/projects/ProjectsPage";
 export const metadata: Metadata = createPageMetadata({
   title: "Projects | Methmal Deshapriya",
   description:
-    "Featured software projects, AI experiments, and full-stack builds by Methmal Deshapriya.",
+    "Software projects by Methmal Deshapriya — full-stack web apps, machine learning experiments, and personal builds.",
   path: "/projects",
 });
 
