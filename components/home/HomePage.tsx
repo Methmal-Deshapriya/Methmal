@@ -90,7 +90,7 @@ const pathwayCards: readonly PathwayCard[] = [
   },
   {
     index: "05",
-    title: "Social",
+    title: "Connect",
     description:
       "A curated surface for social presence, public profiles, and the platforms where I share work, ideas, and updates.",
     href: "/connect",
